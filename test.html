@@ -1,583 +1,739 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Products Section</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Professional Testimonial Slider</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        :root {
-            --primary-color: #aa1e25;
-            --dark-color: #272b36;
-            --secondary-color: #666666;
-            --grey-color: #f5f5f5;
-            --white-color: #ffffff;
-            --title-fonts: 'Red Hat Display', sans-serif;
-            --body-fonts: 'Open Sans', sans-serif;
+      :root {
+        --primary-color: #aa1e25;
+        --dark-color: #272b36;
+        --secondary-color: #666666;
+        --grey-color: #f5f5f5;
+        --white-color: #ffffff;
+        --title-fonts: 'Red Hat Display', sans-serif;
+        --body-fonts: 'Open Sans', sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .ts-body {
+        font-family: var(--body-fonts);
+        background: radial-gradient(
+            circle at 20% 50%,
+            rgba(170, 30, 37, 0.03) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(39, 43, 54, 0.03) 0%,
+            transparent 50%
+          ),
+          linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 60px 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .ts-body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(170, 30, 37, 0.02) 2px,
+            rgba(170, 30, 37, 0.02) 4px
+          ),
+          repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(170, 30, 37, 0.02) 2px,
+            rgba(170, 30, 37, 0.02) 4px
+          );
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .te-container {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .te-header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .te-header-title {
+        font-family: var(--title-fonts);
+        font-size: 42px;
+        font-weight: 700;
+        color: var(--dark-color);
+        margin-bottom: 12px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .te-header-title::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--primary-color),
+          transparent
+        );
+        border-radius: 2px;
+      }
+
+      .te-header-subtitle {
+        font-size: 16px;
+        color: var(--secondary-color);
+        font-weight: 400;
+        letter-spacing: 0.5px;
+      }
+
+      .te-slider-wrapper {
+        position: relative;
+        padding: 0 60px;
+      }
+
+      .te-slider {
+        overflow: hidden;
+        border-radius: 20px;
+        background: var(--white-color);
+        box-shadow: 0 20px 60px rgba(39, 43, 54, 0.12),
+          0 0 0 1px rgba(170, 30, 37, 0.05);
+        position: relative;
+        backdrop-filter: blur(10px);
+      }
+
+      .te-slider::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 6px;
+        background: linear-gradient(
+          90deg,
+          var(--primary-color) 0%,
+          #d42a31 50%,
+          var(--primary-color) 100%
+        );
+        background-size: 200% 100%;
+        animation: tsGradientShift 3s ease infinite;
+      }
+
+      @keyframes tsGradientShift {
+        0%,
+        100% {
+          background-position: 0% 0%;
+        }
+        50% {
+          background-position: 100% 0%;
+        }
+      }
+
+      .te-slides {
+        display: flex;
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .te-slide {
+        min-width: 100%;
+        padding: 60px 80px;
+        position: relative;
+      }
+
+      .te-quote-icon {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        font-size: 60px;
+        color: var(--primary-color);
+        opacity: 0.1;
+      }
+
+      .te-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .te-profile {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 30px;
+      }
+
+      .te-avatar-wrapper {
+        position: relative;
+      }
+
+      .te-avatar {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid var(--grey-color);
+        box-shadow: 0 8px 25px rgba(170, 30, 37, 0.2),
+          0 0 0 8px rgba(170, 30, 37, 0.05);
+        transition: transform 0.3s ease;
+      }
+
+      .te-slide:hover .te-avatar {
+        transform: scale(1.05);
+      }
+
+      .te-verified-badge {
+        position: absolute;
+        bottom: 2px;
+        right: 2px;
+        background: linear-gradient(135deg, var(--primary-color), #d42a31);
+        color: var(--white-color);
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        border: 3px solid var(--white-color);
+        box-shadow: 0 2px 8px rgba(170, 30, 37, 0.3);
+        animation: tsPulse 2s ease-in-out infinite;
+      }
+
+      @keyframes tsPulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+
+      .te-profile-info {
+        flex: 1;
+      }
+
+      .te-name {
+        font-family: var(--title-fonts);
+        font-size: 22px;
+        font-weight: 600;
+        color: var(--dark-color);
+        margin-bottom: 4px;
+      }
+
+      .te-position {
+        font-size: 14px;
+        color: var(--secondary-color);
+        margin-bottom: 8px;
+      }
+
+      .te-rating {
+        display: flex;
+        gap: 4px;
+      }
+
+      .te-star {
+        color: #ffc107;
+        font-size: 14px;
+      }
+
+      .te-star.empty {
+        color: #e0e0e0;
+      }
+
+      .te-text {
+        font-size: 18px;
+        line-height: 1.8;
+        color: var(--secondary-color);
+        margin-bottom: 25px;
+        font-style: italic;
+        position: relative;
+        padding-left: 20px;
+      }
+
+      .te-text::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 8px;
+        width: 4px;
+        height: calc(100% - 16px);
+        background: linear-gradient(180deg, var(--primary-color), transparent);
+        border-radius: 2px;
+      }
+
+      .te-meta {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding-top: 20px;
+        border-top: 1px solid var(--grey-color);
+      }
+
+      .te-meta-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        color: var(--secondary-color);
+      }
+
+      .te-meta-icon {
+        color: var(--primary-color);
+      }
+
+      .te-nav-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--white-color);
+        border: 2px solid var(--grey-color);
+        color: var(--dark-color);
+        font-size: 18px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        z-index: 10;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .te-nav-btn:hover {
+        background: linear-gradient(135deg, var(--primary-color), #d42a31);
+        border-color: var(--primary-color);
+        color: var(--white-color);
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0 6px 25px rgba(170, 30, 37, 0.4);
+      }
+
+      .te-nav-btn:active {
+        transform: translateY(-50%) scale(1.05);
+      }
+
+      .te-nav-btn.prev {
+        left: 0;
+      }
+
+      .te-nav-btn.next {
+        right: 0;
+      }
+
+      .te-dots {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 35px;
+      }
+
+      .te-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #d1d5db;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: none;
+        padding: 0;
+        position: relative;
+      }
+
+      .te-dot::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0;
+        height: 0;
+        background: var(--primary-color);
+        border-radius: 50%;
+        opacity: 0;
+        transition: all 0.4s ease;
+      }
+
+      .te-dot:hover::after {
+        width: 20px;
+        height: 20px;
+        opacity: 0.2;
+      }
+
+      .te-dot.active {
+        background: linear-gradient(90deg, var(--primary-color), #d42a31);
+        width: 35px;
+        border-radius: 6px;
+        box-shadow: 0 2px 8px rgba(170, 30, 37, 0.3);
+      }
+
+      @media (max-width: 768px) {
+        .te-slider-wrapper {
+          padding: 0 50px;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        .te-slide {
+          padding: 40px 30px;
         }
 
-        body {
-            font-family: var(--body-fonts);
-            background-color: var(--white-color);
-            color: var(--dark-color);
-            line-height: 1.6;
+        .te-header-title {
+          font-size: 32px;
         }
 
-        .de-products-section {
-            padding: 80px 20px;
-            background: linear-gradient(135deg, var(--grey-color) 0%, var(--white-color) 100%);
+        .te-profile {
+          flex-direction: column;
+          text-align: center;
         }
 
-        .de-container {
-            max-width: 1400px;
-            margin: 0 auto;
+        .te-text {
+          font-size: 16px;
         }
 
-        .de-section-header {
-            text-align: center;
-            margin-bottom: 60px;
+        .te-meta {
+          flex-direction: column;
+          gap: 10px;
         }
 
-        .de-section-subtitle {
-            color: var(--primary-color);
-            font-family: var(--title-fonts);
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+        .te-nav-btn {
+          width: 40px;
+          height: 40px;
+          font-size: 16px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .te-slider-wrapper {
+          padding: 0 40px;
         }
 
-        .de-section-title {
-            font-family: var(--title-fonts);
-            font-size: 42px;
-            font-weight: 700;
-            color: var(--dark-color);
-            margin-bottom: 16px;
-            line-height: 1.2;
+        .te-slide {
+          padding: 30px 20px;
         }
 
-        .de-section-description {
-            font-size: 16px;
-            color: var(--secondary-color);
-            max-width: 600px;
-            margin: 0 auto;
+        .te-quote-icon {
+          font-size: 40px;
+          top: 20px;
+          left: 20px;
         }
-
-        .de-products-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .de-product-card {
-            background: var(--white-color);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s ease;
-            position: relative;
-        }
-
-        .de-product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 40px rgba(170, 30, 37, 0.15);
-        }
-
-        .de-product-image-wrapper {
-            position: relative;
-            overflow: hidden;
-            background: var(--grey-color);
-            height: 280px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .de-product-badge {
-            position: absolute;
-            top: 16px;
-            left: 16px;
-            background: var(--primary-color);
-            color: var(--white-color);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            z-index: 2;
-            font-family: var(--title-fonts);
-        }
-
-        .de-product-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .de-product-card:hover .de-product-image {
-            transform: scale(1.08);
-        }
-
-        .de-product-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(180deg, transparent 0%, rgba(39, 43, 54, 0.7) 100%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .de-product-card:hover .de-product-overlay {
-            opacity: 1;
-        }
-
-        .de-product-actions {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%) translateY(20px);
-            opacity: 0;
-            transition: all 0.4s ease;
-            display: flex;
-            gap: 10px;
-            z-index: 3;
-        }
-
-        .de-product-card:hover .de-product-actions {
-            transform: translateX(-50%) translateY(0);
-            opacity: 1;
-        }
-
-        .de-action-btn {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: var(--white-color);
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            color: var(--dark-color);
-        }
-
-        .de-action-btn:hover {
-            background: var(--primary-color);
-            color: var(--white-color);
-            transform: scale(1.1);
-        }
-
-        .de-product-content {
-            padding: 24px;
-        }
-
-        .de-product-category {
-            color: var(--secondary-color);
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .de-product-title {
-            font-family: var(--title-fonts);
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--dark-color);
-            margin-bottom: 12px;
-            line-height: 1.3;
-            min-height: 52px;
-        }
-
-        .de-product-rating {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 12px;
-        }
-
-        .de-stars {
-            color: #ffa500;
-            font-size: 14px;
-        }
-
-        .de-rating-count {
-            color: var(--secondary-color);
-            font-size: 13px;
-        }
-
-        .de-product-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 16px;
-            border-top: 1px solid var(--grey-color);
-        }
-
-        .de-product-price {
-            display: flex;
-            align-items: baseline;
-            gap: 8px;
-        }
-
-        .de-price-current {
-            font-family: var(--title-fonts);
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-
-        .de-price-original {
-            font-size: 16px;
-            color: var(--secondary-color);
-            text-decoration: line-through;
-        }
-
-        .de-cart-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: var(--primary-color);
-            border: none;
-            color: var(--white-color);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-
-        .de-cart-btn:hover {
-            background: var(--dark-color);
-            transform: rotate(12deg);
-        }
-
-        .de-view-all-wrapper {
-            text-align: center;
-        }
-
-        .de-view-all-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 16px 40px;
-            background: var(--primary-color);
-            color: var(--white-color);
-            font-family: var(--title-fonts);
-            font-size: 16px;
-            font-weight: 600;
-            border: 2px solid var(--primary-color);
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            text-decoration: none;
-        }
-
-        .de-view-all-btn:hover {
-            background: transparent;
-            color: var(--primary-color);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(170, 30, 37, 0.2);
-        }
-
-        .de-view-all-btn i {
-            transition: transform 0.4s ease;
-        }
-
-        .de-view-all-btn:hover i {
-            transform: translateX(5px);
-        }
-
-        /* Tablet Styles */
-        @media (max-width: 1024px) {
-            .de-products-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 25px;
-            }
-
-            .de-section-title {
-                font-size: 36px;
-            }
-
-            .de-product-image-wrapper {
-                height: 240px;
-            }
-        }
-
-        /* Mobile Styles */
-        @media (max-width: 768px) {
-            .de-products-section {
-                padding: 60px 16px;
-            }
-
-            .de-products-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-
-            .de-section-header {
-                margin-bottom: 40px;
-            }
-
-            .de-section-title {
-                font-size: 28px;
-            }
-
-            .de-section-subtitle {
-                font-size: 12px;
-            }
-
-            .de-section-description {
-                font-size: 14px;
-            }
-
-            .de-product-image-wrapper {
-                height: 200px;
-            }
-
-            .de-product-content {
-                padding: 16px;
-            }
-
-            .de-product-title {
-                font-size: 16px;
-                min-height: auto;
-            }
-
-            .de-price-current {
-                font-size: 20px;
-            }
-
-            .de-price-original {
-                font-size: 14px;
-            }
-
-            .de-action-btn {
-                width: 38px;
-                height: 38px;
-            }
-
-            .de-view-all-btn {
-                padding: 14px 32px;
-                font-size: 14px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .de-products-grid {
-                gap: 16px;
-            }
-
-            .de-product-badge {
-                padding: 4px 10px;
-                font-size: 11px;
-            }
-
-            .de-product-image-wrapper {
-                height: 180px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
-    <section class="de-products-section">
-        <div class="de-container">
-            <div class="de-section-header">
-                <div class="de-section-subtitle">
-                    <i class="fas fa-star"></i>
-                    Featured Products
-                    <i class="fas fa-star"></i>
-                </div>
-                <h2 class="de-section-title">Discover Our Premium Collection</h2>
-                <p class="de-section-description">Explore our handpicked selection of high-quality products designed to elevate your lifestyle with exceptional craftsmanship and style.</p>
-            </div>
-
-            <div class="de-products-grid">
-                <!-- Product 1 -->
-                <div class="de-product-card">
-                    <div class="de-product-image-wrapper">
-                        <span class="de-product-badge">NEW</span>
-                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=600&fit=crop" alt="Wireless Headphones" class="de-product-image">
-                        <div class="de-product-overlay"></div>
-                        <div class="de-product-actions">
-                            <button class="de-action-btn" title="Quick View">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                            <button class="de-action-btn" title="Add to Wishlist">
-                                <i class="fas fa-heart"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="de-product-content">
-                        <div class="de-product-category">Electronics</div>
-                        <h3 class="de-product-title">Premium Wireless Headphones</h3>
-                        <div class="de-product-rating">
-                            <div class="de-stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <span class="de-rating-count">(128)</span>
-                        </div>
-                        <div class="de-product-footer">
-                            <div class="de-product-price">
-                                <span class="de-price-current">$199</span>
-                                <span class="de-price-original">$299</span>
-                            </div>
-                            <button class="de-cart-btn" title="Add to Cart">
-                                <i class="fas fa-shopping-cart"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 2 -->
-                <div class="de-product-card">
-                    <div class="de-product-image-wrapper">
-                        <span class="de-product-badge">SALE</span>
-                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=600&fit=crop" alt="Smart Watch" class="de-product-image">
-                        <div class="de-product-overlay"></div>
-                        <div class="de-product-actions">
-                            <button class="de-action-btn" title="Quick View">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                            <button class="de-action-btn" title="Add to Wishlist">
-                                <i class="fas fa-heart"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="de-product-content">
-                        <div class="de-product-category">Wearables</div>
-                        <h3 class="de-product-title">Elite Smart Watch Series X</h3>
-                        <div class="de-product-rating">
-                            <div class="de-stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <span class="de-rating-count">(256)</span>
-                        </div>
-                        <div class="de-product-footer">
-                            <div class="de-product-price">
-                                <span class="de-price-current">$349</span>
-                                <span class="de-price-original">$499</span>
-                            </div>
-                            <button class="de-cart-btn" title="Add to Cart">
-                                <i class="fas fa-shopping-cart"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div class="de-product-card">
-                    <div class="de-product-image-wrapper">
-                        <span class="de-product-badge">HOT</span>
-                        <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=600&h=600&fit=crop" alt="Camera Lens" class="de-product-image">
-                        <div class="de-product-overlay"></div>
-                        <div class="de-product-actions">
-                            <button class="de-action-btn" title="Quick View">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                            <button class="de-action-btn" title="Add to Wishlist">
-                                <i class="fas fa-heart"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="de-product-content">
-                        <div class="de-product-category">Photography</div>
-                        <h3 class="de-product-title">Professional Camera Backpack</h3>
-                        <div class="de-product-rating">
-                            <div class="de-stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-                            <span class="de-rating-count">(89)</span>
-                        </div>
-                        <div class="de-product-footer">
-                            <div class="de-product-price">
-                                <span class="de-price-current">$159</span>
-                                <span class="de-price-original">$219</span>
-                            </div>
-                            <button class="de-cart-btn" title="Add to Cart">
-                                <i class="fas fa-shopping-cart"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="de-product-card">
-                    <div class="de-product-image-wrapper">
-                        <span class="de-product-badge">TRENDING</span>
-                        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&h=600&fit=crop" alt="Sunglasses" class="de-product-image">
-                        <div class="de-product-overlay"></div>
-                        <div class="de-product-actions">
-                            <button class="de-action-btn" title="Quick View">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                            <button class="de-action-btn" title="Add to Wishlist">
-                                <i class="fas fa-heart"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="de-product-content">
-                        <div class="de-product-category">Fashion</div>
-                        <h3 class="de-product-title">Designer Polarized Sunglasses</h3>
-                        <div class="de-product-rating">
-                            <div class="de-stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <span class="de-rating-count">(174)</span>
-                        </div>
-                        <div class="de-product-footer">
-                            <div class="de-product-price">
-                                <span class="de-price-current">$129</span>
-                                <span class="de-price-original">$189</span>
-                            </div>
-                            <button class="de-cart-btn" title="Add to Cart">
-                                <i class="fas fa-shopping-cart"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="de-view-all-wrapper">
-                <a href="#all-products" class="de-view-all-btn">
-                    View All Products
-                    <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
+  </head>
+  <body>
+    <section class="ts-body">
+      <div class="te-container">
+        <div class="te-header">
+          <h2 class="te-header-title">Client Testimonials</h2>
+          <p class="te-header-subtitle">What our valued clients say about us</p>
         </div>
+
+        <div class="te-slider-wrapper">
+          <button class="te-nav-btn prev" onclick="prevSlide()">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+
+          <div class="te-slider">
+            <i class="fas fa-quote-left te-quote-icon"></i>
+            <div class="te-slides" id="teSlides">
+              <!-- Slide 1 -->
+              <div class="te-slide">
+                <div class="te-content">
+                  <div class="te-profile">
+                    <div class="te-avatar-wrapper">
+                      <img
+                        src="https://i.pravatar.cc/150?img=12"
+                        alt="Sarah Johnson"
+                        class="te-avatar"
+                      />
+                      <span class="te-verified-badge">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </div>
+                    <div class="te-profile-info">
+                      <h3 class="te-name">Sarah Johnson</h3>
+                      <p class="te-position">CEO, TechVision Inc.</p>
+                      <div class="te-rating">
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="te-text">
+                    "Working with this team has been an absolute game-changer
+                    for our business. Their professionalism, attention to
+                    detail, and innovative approach exceeded all our
+                    expectations. The results speak for themselves - we've seen
+                    a 300% increase in engagement."
+                  </p>
+                  <div class="te-meta">
+                    <div class="te-meta-item">
+                      <i class="far fa-calendar-alt te-meta-icon"></i>
+                      <span>October 2024</span>
+                    </div>
+                    <div class="te-meta-item">
+                      <i class="fas fa-briefcase te-meta-icon"></i>
+                      <span>Technology</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="te-slide">
+                <div class="te-content">
+                  <div class="te-profile">
+                    <div class="te-avatar-wrapper">
+                      <img
+                        src="https://i.pravatar.cc/150?img=33"
+                        alt="Michael Chen"
+                        class="te-avatar"
+                      />
+                      <span class="te-verified-badge">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </div>
+                    <div class="te-profile-info">
+                      <h3 class="te-name">Michael Chen</h3>
+                      <p class="te-position">Founder, Digital Dynamics</p>
+                      <div class="te-rating">
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="te-text">
+                    "Exceptional service from start to finish! The team's
+                    expertise and dedication transformed our vision into
+                    reality. Their strategic insights and creative solutions
+                    have positioned us as industry leaders. I couldn't recommend
+                    them more highly."
+                  </p>
+                  <div class="te-meta">
+                    <div class="te-meta-item">
+                      <i class="far fa-calendar-alt te-meta-icon"></i>
+                      <span>September 2024</span>
+                    </div>
+                    <div class="te-meta-item">
+                      <i class="fas fa-briefcase te-meta-icon"></i>
+                      <span>Marketing</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="te-slide">
+                <div class="te-content">
+                  <div class="te-profile">
+                    <div class="te-avatar-wrapper">
+                      <img
+                        src="https://i.pravatar.cc/150?img=47"
+                        alt="Emily Rodriguez"
+                        class="te-avatar"
+                      />
+                      <span class="te-verified-badge">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </div>
+                    <div class="te-profile-info">
+                      <h3 class="te-name">Emily Rodriguez</h3>
+                      <p class="te-position">Director, Creative Solutions</p>
+                      <div class="te-rating">
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="te-text">
+                    "Outstanding quality and remarkable professionalism! Every
+                    interaction was smooth, and the final deliverables were
+                    beyond impressive. They truly understand client needs and
+                    deliver excellence consistently. A trusted partner for all
+                    our projects."
+                  </p>
+                  <div class="te-meta">
+                    <div class="te-meta-item">
+                      <i class="far fa-calendar-alt te-meta-icon"></i>
+                      <span>November 2024</span>
+                    </div>
+                    <div class="te-meta-item">
+                      <i class="fas fa-briefcase te-meta-icon"></i>
+                      <span>Design</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="te-nav-btn next" onclick="nextSlide()">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+
+        <div class="te-dots" id="teDots"></div>
+      </div>
     </section>
-</body>
+
+    <script>
+      let tsCurrentSlide = 0;
+      const tsSlides = document.querySelectorAll('.te-slide');
+      const tsTotalSlides = tsSlides.length;
+      const tsSlidesContainer = document.getElementById('teSlides');
+      const tsDotsContainer = document.getElementById('teDots');
+      let tsAutoPlayInterval = null;
+      const tsAutoPlayDelay = 6000;
+      const tsTransitionDuration = 600;
+
+      function tsCreateDots() {
+        for (let tsIndex = 0; tsIndex < tsTotalSlides; tsIndex++) {
+          const tsDot = document.createElement('button');
+          tsDot.classList.add('te-dot');
+          tsDot.setAttribute('aria-label', `Go to testimonial ${tsIndex + 1}`);
+          if (tsIndex === 0) tsDot.classList.add('active');
+          tsDot.addEventListener('click', () => tsGoToSlide(tsIndex));
+          tsDotsContainer.appendChild(tsDot);
+        }
+      }
+
+      function tsUpdateDots() {
+        const tsDots = document.querySelectorAll('.te-dot');
+        tsDots.forEach((tsDot, tsIndex) => {
+          tsDot.classList.toggle('active', tsIndex === tsCurrentSlide);
+        });
+      }
+
+      function tsGoToSlide(tsIndex) {
+        if (tsIndex === tsCurrentSlide) return;
+        tsCurrentSlide = tsIndex;
+        tsSlidesContainer.style.transform = `translateX(-${
+          tsCurrentSlide * 100
+        }%)`;
+        tsUpdateDots();
+      }
+
+      function tsNextSlide() {
+        tsCurrentSlide = (tsCurrentSlide + 1) % tsTotalSlides;
+        tsGoToSlide(tsCurrentSlide);
+      }
+
+      function tsPrevSlide() {
+        tsCurrentSlide = (tsCurrentSlide - 1 + tsTotalSlides) % tsTotalSlides;
+        tsGoToSlide(tsCurrentSlide);
+      }
+
+      function tsStartAutoPlay() {
+        tsAutoPlayInterval = setInterval(tsNextSlide, tsAutoPlayDelay);
+      }
+
+      function tsStopAutoPlay() {
+        if (tsAutoPlayInterval) {
+          clearInterval(tsAutoPlayInterval);
+          tsAutoPlayInterval = null;
+        }
+      }
+
+      function nextSlide() {
+        tsNextSlide();
+      }
+
+      function prevSlide() {
+        tsPrevSlide();
+      }
+
+      tsCreateDots();
+      tsStartAutoPlay();
+
+      const tsSliderWrapper = document.querySelector('.te-slider-wrapper');
+      tsSliderWrapper.addEventListener('mouseenter', tsStopAutoPlay);
+      tsSliderWrapper.addEventListener('mouseleave', tsStartAutoPlay);
+
+      document.addEventListener('keydown', (tsEvent) => {
+        if (tsEvent.key === 'ArrowLeft') {
+          tsPrevSlide();
+          tsStopAutoPlay();
+        } else if (tsEvent.key === 'ArrowRight') {
+          tsNextSlide();
+          tsStopAutoPlay();
+        }
+      });
+
+      let tsTouchStartX = 0;
+      let tsTouchEndX = 0;
+      const tsSwipeThreshold = 50;
+
+      tsSliderWrapper.addEventListener(
+        'touchstart',
+        (tsEvent) => {
+          tsTouchStartX = tsEvent.changedTouches[0].screenX;
+        },
+        { passive: true }
+      );
+
+      tsSliderWrapper.addEventListener(
+        'touchend',
+        (tsEvent) => {
+          tsTouchEndX = tsEvent.changedTouches[0].screenX;
+          tsHandleSwipe();
+        },
+        { passive: true }
+      );
+
+      function tsHandleSwipe() {
+        const tsSwipeDistance = tsTouchStartX - tsTouchEndX;
+        if (Math.abs(tsSwipeDistance) > tsSwipeThreshold) {
+          if (tsSwipeDistance > 0) {
+            tsNextSlide();
+          } else {
+            tsPrevSlide();
+          }
+          tsStopAutoPlay();
+        }
+      }
+    </script>
+  </body>
 </html>

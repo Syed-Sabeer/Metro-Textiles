@@ -45,9 +45,30 @@
   <body>
     <!-- Loading -->
     <div id="pq-loading">
-      <div id="pq-loading-center">
+      <!-- <div id="pq-loading-center">
         <img src="images/logos/loader.png" alt="loading" />
+      </div> -->
+
+      <div class="lo-wrapper">
+      <div class="lo-container">
+        <div class="lo-spinner-container">
+          <div class="lo-spinner-ring"></div>
+          <div class="lo-spinner-ring"></div>
+          <div class="lo-spinner-center">
+            <i class="fas fa-rocket lo-spinner-icon"></i>
+          </div>
+        </div>
+
+        <p class="lo-status-text">Loading Please Wait</p>
+
+        <div class="lo-progress-wrapper">
+          <div class="lo-progress-track">
+            <div class="lo-progress-bar"></div>
+          </div>
+          <p class="lo-percentage">Processing...</p>
+        </div>
       </div>
+    </div>
     </div>
     <!-- Loading -->
 
@@ -1266,48 +1287,250 @@
     </section> -->
     <!-- Production -->
 
-    <!-- Provide -->
-    <section class="provide pq-bg-primary pq-bg-img-2 pq-py-60">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-xl-8">
-            <div class="pq-section-title pq-style-1">
-              <h5 class="pq-section-main-title">
-                Provide the highest quality work that meets your expectation
-              </h5>
+        <section class="pd-products-section">
+      <div class="pd-container">
+        <div class="pd-section-header">
+          <div class="pd-section-badge">
+            <i class="fas fa-gem"></i>
+            Premium Collection
+          </div>
+          <h2 class="pd-section-title">
+            Discover Your Next
+            <span class="pd-highlight">Favorite Product</span>
+          </h2>
+          <p class="pd-section-description">
+            Explore our curated selection of premium products, meticulously
+            crafted to bring excellence and innovation into your everyday life.
+          </p>
+        </div>
+
+        <div class="pd-products-grid">
+          <!-- Product 1 -->
+          <div class="pd-product-card">
+            <div class="pd-product-image-wrapper">
+              <span class="pd-product-badge">New Arrival</span>
+              <button class="pd-wishlist-btn">
+                <i class="far fa-heart"></i>
+              </button>
+              <img
+                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=600&fit=crop"
+                alt="Premium Wireless Headphones"
+                class="pd-product-image"
+              />
+              <div class="pd-product-overlay"></div>
+              <button class="pd-quick-view-btn">
+                <i class="fas fa-eye"></i>
+                Quick View
+              </button>
+            </div>
+            <div class="pd-product-content">
+              <span class="pd-product-category"
+                ><i class="fas fa-headphones"></i> Electronics</span
+              >
+              <h3 class="pd-product-title">Premium Wireless Headphones</h3>
+              <p class="pd-product-description">
+                Experience crystal-clear sound with advanced noise cancellation
+                technology.
+              </p>
+              <div class="pd-product-rating">
+                <div class="pd-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="pd-rating-text">4.5 (128 reviews)</span>
+              </div>
+              <div class="pd-product-footer">
+                <div class="pd-product-price">
+                  <span class="pd-price-current">$199</span>
+                  <div class="pd-price-wrapper">
+                    <span class="pd-price-original">$299</span>
+                    <span class="pd-discount-badge">-33%</span>
+                  </div>
+                </div>
+                <button class="pd-add-to-cart-btn">
+                  <i class="fas fa-shopping-bag"></i>
+                  Add to Cart
+                </button>
+              </div>
             </div>
           </div>
-          <div class="col-xl-4">
-            <div class="button-align">
-              <a class="pq-button pq-button-flat" href="contact.html">
-                <div class="pq-button-block">
-                  <span class="pq-button-text">contact us</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="pq-svg-arrow"
-                    width="34.899"
-                    height="14.585"
-                    viewBox="0 0 34.899 14.585"
-                  >
-                    <path
-                      d="M.5,6.388c6.609,0,11.487-6.142,11.535-6.2a.6.6,0,0,1,.684-.131.33.33,0,0,1,.176.513A19.589,19.589,0,0,1,4.765,6.388H33.4c.275,0,.5.168.5.376s-.223.376-.5.376H4.765a19.591,19.591,0,0,1,8.128,5.822.331.331,0,0,1-.179.514.6.6,0,0,1-.68-.133c-.048-.062-4.926-6.2-11.535-6.2-.275,0-.5-.168-.5-.376S.223,6.388.5,6.388Z"
-                      transform="translate(34.399 14.056) rotate(180)"
-                      fill="currentColor"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    ></path>
-                  </svg>
+
+          <!-- Product 2 -->
+          <div class="pd-product-card">
+            <div class="pd-product-image-wrapper">
+              <span class="pd-product-badge">Best Seller</span>
+              <button class="pd-wishlist-btn">
+                <i class="far fa-heart"></i>
+              </button>
+              <img
+                src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=600&fit=crop"
+                alt="Elite Smart Watch"
+                class="pd-product-image"
+              />
+              <div class="pd-product-overlay"></div>
+              <button class="pd-quick-view-btn">
+                <i class="fas fa-eye"></i>
+                Quick View
+              </button>
+            </div>
+            <div class="pd-product-content">
+              <span class="pd-product-category"
+                ><i class="fas fa-clock"></i> Wearables</span
+              >
+              <h3 class="pd-product-title">Elite Smart Watch Series X</h3>
+              <p class="pd-product-description">
+                Track your fitness goals with precision and style in one elegant
+                device.
+              </p>
+              <div class="pd-product-rating">
+                <div class="pd-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
                 </div>
-              </a>
+                <span class="pd-rating-text">5.0 (256 reviews)</span>
+              </div>
+              <div class="pd-product-footer">
+                <div class="pd-product-price">
+                  <span class="pd-price-current">$349</span>
+                  <div class="pd-price-wrapper">
+                    <span class="pd-price-original">$499</span>
+                    <span class="pd-discount-badge">-30%</span>
+                  </div>
+                </div>
+                <button class="pd-add-to-cart-btn">
+                  <i class="fas fa-shopping-bag"></i>
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div class="pd-product-card">
+            <div class="pd-product-image-wrapper">
+              <span class="pd-product-badge">Hot Deal</span>
+              <button class="pd-wishlist-btn">
+                <i class="far fa-heart"></i>
+              </button>
+              <img
+                src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=600&h=600&fit=crop"
+                alt="Camera Backpack"
+                class="pd-product-image"
+              />
+              <div class="pd-product-overlay"></div>
+              <button class="pd-quick-view-btn">
+                <i class="fas fa-eye"></i>
+                Quick View
+              </button>
+            </div>
+            <div class="pd-product-content">
+              <span class="pd-product-category"
+                ><i class="fas fa-camera"></i> Photography</span
+              >
+              <h3 class="pd-product-title">Professional Camera Backpack</h3>
+              <p class="pd-product-description">
+                Protect your gear in style with premium padding and weather
+                resistance.
+              </p>
+              <div class="pd-product-rating">
+                <div class="pd-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+                <span class="pd-rating-text">4.2 (89 reviews)</span>
+              </div>
+              <div class="pd-product-footer">
+                <div class="pd-product-price">
+                  <span class="pd-price-current">$159</span>
+                  <div class="pd-price-wrapper">
+                    <span class="pd-price-original">$219</span>
+                    <span class="pd-discount-badge">-27%</span>
+                  </div>
+                </div>
+                <button class="pd-add-to-cart-btn">
+                  <i class="fas fa-shopping-bag"></i>
+                  Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div class="pd-product-card">
+            <div class="pd-product-image-wrapper">
+              <span class="pd-product-badge">Trending</span>
+              <button class="pd-wishlist-btn">
+                <i class="far fa-heart"></i>
+              </button>
+              <img
+                src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&h=600&fit=crop"
+                alt="Designer Sunglasses"
+                class="pd-product-image"
+              />
+              <div class="pd-product-overlay"></div>
+              <button class="pd-quick-view-btn">
+                <i class="fas fa-eye"></i>
+                Quick View
+              </button>
+            </div>
+            <div class="pd-product-content">
+              <span class="pd-product-category"
+                ><i class="fas fa-glasses"></i> Fashion</span
+              >
+              <h3 class="pd-product-title">Designer Polarized Sunglasses</h3>
+              <p class="pd-product-description">
+                Luxury eyewear with UV protection and timeless design
+                aesthetics.
+              </p>
+              <div class="pd-product-rating">
+                <div class="pd-stars">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+                <span class="pd-rating-text">4.6 (174 reviews)</span>
+              </div>
+              <div class="pd-product-footer">
+                <div class="pd-product-price">
+                  <span class="pd-price-current">$129</span>
+                  <div class="pd-price-wrapper">
+                    <span class="pd-price-original">$189</span>
+                    <span class="pd-discount-badge">-32%</span>
+                  </div>
+                </div>
+                <button class="pd-add-to-cart-btn">
+                  <i class="fas fa-shopping-bag"></i>
+                  Add to Cart
+                </button>
+              </div>
             </div>
           </div>
         </div>
+
+        <div class="pd-view-all-wrapper">
+          <a href="#all-products" class="pd-view-all-btn">
+            Explore All Products
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
       </div>
     </section>
-    <!-- Provide -->
+
+
 
     <!-- Team -->
-    <section class="team py-0">
+    <!-- <section class="team py-0">
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-12 p-0">
@@ -1484,11 +1707,11 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- Team -->
 
     <!-- Process -->
-    <section class="process wow animated fadeInUp">
+    <section class="process pq-process-bg-img">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
@@ -1498,94 +1721,87 @@
                   decoding="async"
                   src="images/section-title/title-icon-primary.png"
                   alt="image"
-                />our working process
+                />OUR WORKING PROCESS
               </span>
               <h5 class="pq-section-main-title">
                 We Give Top Production From Every Angle
               </h5>
             </div>
           </div>
-          <div class="col-xl-3 col-lg-6 col-md-6">
-            <div class="pq-circle-progress pq-circle-progress-style-1">
-              <div
-                class="pq-circle-progress-bar"
-                data-size="180"
-                data-thickness="5"
-                data-skill-level="65"
-                data-empty-color="#F5F5F5"
-                data-fill-color="#F56800"
-              >
-                <span class="pq-progress-count">65%</span>
+        </div>
+        <div class="row justify-content-center">
+          <div
+            class="col-xl-4 col-lg-6 col-md-6 pq-mt-60 wow animated fadeInLeft"
+          >
+            <div class="pq-process-step pq-style-1 text-center">
+              <div class="pq-process-media">
+                <img
+                  decoding="async"
+                  src="images/process-step/1.jpg"
+                  alt="image"
+                />
+                <span class="pq-process-number">step 1</span>
               </div>
-              <div class="pq-progress-details">
-                <h5 class="pq-progress-title">febric design</h5>
-                <span class="pq-progress-desc"
-                  >From Handcrafted such as using organic Textiles
-                  Production</span
-                >
+              <div class="pq-process-icon">
+                <i class="flaticon-sewing-machine-1"></i>
               </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-6 col-md-6 mt-4 mt-md-0">
-            <div class="pq-circle-progress pq-circle-progress-style-1">
-              <div
-                class="pq-circle-progress-bar"
-                data-size="180"
-                data-thickness="5"
-                data-skill-level="75"
-                data-empty-color="#F5F5F5"
-                data-fill-color="#F56800"
-              >
-                <span class="pq-progress-count">75%</span>
-              </div>
-              <div class="pq-progress-details">
-                <h5 class="pq-progress-title">trusted clients</h5>
-                <span class="pq-progress-desc"
-                  >From Handcrafted such as using organic Textiles
-                  Production</span
-                >
+              <div class="pq-process-info">
+                <h5 class="pq-process-title">product of fabrics</h5>
+                <p class="pq-process-description">
+                  extiles are materials made from fibers or yarn, and they are
+                  used to create a wide range of products such as household
+                  items clothing
+                </p>
               </div>
             </div>
           </div>
-          <div class="col-xl-3 col-lg-6 col-md-6 mt-4 mt-xl-0">
-            <div class="pq-circle-progress pq-circle-progress-style-1">
-              <div
-                class="pq-circle-progress-bar"
-                data-size="180"
-                data-thickness="5"
-                data-skill-level="85"
-                data-empty-color="#F5F5F5"
-                data-fill-color="#F56800"
-              >
-                <span class="pq-progress-count">85%</span>
+          <div
+            class="col-xl-4 col-lg-6 col-md-6 mt-5 mt-md-0 pq-process-center wow animated fadeInUp"
+          >
+            <div class="pq-process-step pq-style-1 text-center">
+              <div class="pq-process-media">
+                <img
+                  decoding="async"
+                  src="images/process-step/2.jpg"
+                  alt="image"
+                />
+                <span class="pq-process-number">step 2</span>
               </div>
-              <div class="pq-progress-details">
-                <h5 class="pq-progress-title">experience years</h5>
-                <span class="pq-progress-desc"
-                  >From Handcrafted such as using organic Textiles
-                  Production</span
-                >
+              <div class="pq-process-icon">
+                <i class="flaticon-scissors-1"></i>
+              </div>
+              <div class="pq-process-info">
+                <h5 class="pq-process-title">exportation glabally</h5>
+                <p class="pq-process-description">
+                  extiles are materials made from fibers or yarn, and they are
+                  used to create a wide range of products such as household
+                  items clothing
+                </p>
               </div>
             </div>
           </div>
-          <div class="col-xl-3 col-lg-6 col-md-6 mt-4 mt-xl-0">
-            <div class="pq-circle-progress pq-circle-progress-style-1">
-              <div
-                class="pq-circle-progress-bar"
-                data-size="180"
-                data-thickness="5"
-                data-skill-level="55"
-                data-empty-color="#F5F5F5"
-                data-fill-color="#F56800"
-              >
-                <span class="pq-progress-count">55%</span>
+          <div
+            class="col-xl-4 col-lg-6 col-md-6 mt-5 mt-xl-0 pq-mt-60 wow animated fadeInRight"
+          >
+            <div class="pq-process-step pq-style-1 text-center">
+              <div class="pq-process-media">
+                <img
+                  decoding="async"
+                  src="images/process-step/3.jpg"
+                  alt="image"
+                />
+                <span class="pq-process-number">step 3</span>
               </div>
-              <div class="pq-progress-details">
-                <h5 class="pq-progress-title">visited confernance</h5>
-                <span class="pq-progress-desc"
-                  >From Handcrafted such as using organic Textiles
-                  Production</span
-                >
+              <div class="pq-process-icon">
+                <i class="flaticon-sewing-machine"></i>
+              </div>
+              <div class="pq-process-info">
+                <h5 class="pq-process-title">Textiles Trends Forecasts</h5>
+                <p class="pq-process-description">
+                  extiles are materials made from fibers or yarn, and they are
+                  used to create a wide range of products such as household
+                  items clothing
+                </p>
               </div>
             </div>
           </div>
@@ -1594,426 +1810,583 @@
     </section>
     <!-- Process -->
 
-    <!-- Testimonial -->
-    <section class="testimonial pq-bg-dark pq-bg-img-7 pb-xl-0">
-      <div class="container">
+    <!-- Slides -->
+    <section class="slides py-0">
+      <div class="container-fluid">
         <div class="row">
-          <div class="col-xl-5">
-            <div class="pq-testimonial-image-box">
-              <img src="images/testimonial/1.jpg" alt="" />
-              <div class="pq-quote">
-                <i class="fas fa-quote-right"></i>
-              </div>
-              <div class="pq-icon-box pq-style-2">
-                <div class="pq-icon">
-                  <i class="flaticon-sewing-machine"></i>
+          <div class="col-lg-12 p-0">
+            <div class="pq-background-img">
+              <div class="pq-background-img-inner">
+                <div class="pq-background-img-item">
+                  <div class="pq-background-link">
+                    <a
+                      class="pq-background-img-number"
+                      href="fabric-dyeing.html"
+                      >01</a
+                    >
+                  </div>
+                  <div class="pq-background-img-info">
+                    <h4 class="pq-background-img-title">
+                      <a href="fabric-dyeing.html">fabric dyeing </a>
+                    </h4>
+                  </div>
+                  <div class="pq-background-content">
+                    <div class="pq-background-leftimg">
+                      <img
+                        decoding="async"
+                        class="background img"
+                        src="images/slides/1.png"
+                        alt="textica"
+                      />
+                    </div>
+                    <div class="pq-background-rightinfo">
+                      <h4 class="pq-rightinfo-title">fabric dyeing</h4>
+                      <p class="pq-rightinfo-description">
+                        Textiles are materials made from fibers or yarn, and
+                        they are used to create widetest range of products such
+                        as clothing and industrial goods.
+                      </p>
+                      <div class="pq-btn-container">
+                        <a
+                          class="pq-button pq-button-flat"
+                          href="fabric-dyeing.html"
+                          tabindex="0"
+                        >
+                          <div class="pq-button-block">
+                            <span class="pq-button-text">Read More</span>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="pq-svg-arrow"
+                              width="34.899"
+                              height="14.585"
+                              viewBox="0 0 34.899 14.585"
+                            >
+                              <path
+                                d="M.5,6.388c6.609,0,11.487-6.142,11.535-6.2a.6.6,0,0,1,.684-.131.33.33,0,0,1,.176.513A19.589,19.589,0,0,1,4.765,6.388H33.4c.275,0,.5.168.5.376s-.223.376-.5.376H4.765a19.591,19.591,0,0,1,8.128,5.822.331.331,0,0,1-.179.514.6.6,0,0,1-.68-.133c-.048-.062-4.926-6.2-11.535-6.2-.275,0-.5-.168-.5-.376S.223,6.388.5,6.388Z"
+                                transform="translate(34.399 14.056) rotate(180)"
+                                fill="currentColor"
+                                stroke="currentColor"
+                                stroke-width="1"
+                              ></path>
+                            </svg>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="pq-icon-box-content">
-                  <h6 class="pq-icon-box-title">Over All Rating</h6>
-                  <p class="pq-icon-box-description">Based on 2555 Reviews</p>
+                <div class="pq-background-img-item active">
+                  <div class="pq-background-link">
+                    <a
+                      class="pq-background-img-number"
+                      href="fabric-printing.html"
+                      >02</a
+                    >
+                  </div>
+                  <div class="pq-background-img-info">
+                    <h4 class="pq-background-img-title">
+                      <a href="fabric-printing.html"> digital printing </a>
+                    </h4>
+                  </div>
+                  <div class="pq-background-content">
+                    <div class="pq-background-leftimg">
+                      <img
+                        decoding="async"
+                        class="background img"
+                        src="images/slides/2.jpg"
+                        alt="textica"
+                      />
+                    </div>
+                    <div class="pq-background-rightinfo">
+                      <h4 class="pq-rightinfo-title">digital printing</h4>
+                      <p class="pq-rightinfo-description">
+                        Textiles are materials made from fibers or yarn, and
+                        they are used to create widetest range of products such
+                        as clothing and industrial goods.
+                      </p>
+                      <div class="pq-btn-container">
+                        <a
+                          class="pq-button pq-button-flat"
+                          href="fabric-printing.html"
+                          tabindex="0"
+                        >
+                          <div class="pq-button-block">
+                            <span class="pq-button-text">Read More</span>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="pq-svg-arrow"
+                              width="34.899"
+                              height="14.585"
+                              viewBox="0 0 34.899 14.585"
+                            >
+                              <path
+                                d="M.5,6.388c6.609,0,11.487-6.142,11.535-6.2a.6.6,0,0,1,.684-.131.33.33,0,0,1,.176.513A19.589,19.589,0,0,1,4.765,6.388H33.4c.275,0,.5.168.5.376s-.223.376-.5.376H4.765a19.591,19.591,0,0,1,8.128,5.822.331.331,0,0,1-.179.514.6.6,0,0,1-.68-.133c-.048-.062-4.926-6.2-11.535-6.2-.275,0-.5-.168-.5-.376S.223,6.388.5,6.388Z"
+                                transform="translate(34.399 14.056) rotate(180)"
+                                fill="currentColor"
+                                stroke="currentColor"
+                                stroke-width="1"
+                              ></path>
+                            </svg>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pq-background-img-item">
+                  <div class="pq-background-link">
+                    <a class="pq-background-img-number" href="manufacture.html"
+                      >03</a
+                    >
+                  </div>
+                  <div class="pq-background-img-info">
+                    <h4 class="pq-background-img-title">
+                      <a href="manufacture.html"> Satin Weaving </a>
+                    </h4>
+                  </div>
+                  <div class="pq-background-content">
+                    <div class="pq-background-leftimg">
+                      <img
+                        decoding="async"
+                        class="background img"
+                        src="images/slides/1.png"
+                        alt="textica"
+                      />
+                    </div>
+                    <div class="pq-background-rightinfo">
+                      <h4 class="pq-rightinfo-title">Satin Weaving</h4>
+                      <p class="pq-rightinfo-description">
+                        Textiles are materials made from fibers or yarn, and
+                        they are used to create widetest range of products such
+                        as clothing and industrial goods.
+                      </p>
+                      <div class="pq-btn-container">
+                        <a
+                          class="pq-button pq-button-flat"
+                          href="manufacture.html"
+                          tabindex="0"
+                        >
+                          <div class="pq-button-block">
+                            <span class="pq-button-text">Read More</span>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="pq-svg-arrow"
+                              width="34.899"
+                              height="14.585"
+                              viewBox="0 0 34.899 14.585"
+                            >
+                              <path
+                                d="M.5,6.388c6.609,0,11.487-6.142,11.535-6.2a.6.6,0,0,1,.684-.131.33.33,0,0,1,.176.513A19.589,19.589,0,0,1,4.765,6.388H33.4c.275,0,.5.168.5.376s-.223.376-.5.376H4.765a19.591,19.591,0,0,1,8.128,5.822.331.331,0,0,1-.179.514.6.6,0,0,1-.68-.133c-.048-.062-4.926-6.2-11.535-6.2-.275,0-.5-.168-.5-.376S.223,6.388.5,6.388Z"
+                                transform="translate(34.399 14.056) rotate(180)"
+                                fill="currentColor"
+                                stroke="currentColor"
+                                stroke-width="1"
+                              ></path>
+                            </svg>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pq-background-img-item">
+                  <div class="pq-background-link">
+                    <a class="pq-background-img-number" href="stich-fabric.html"
+                      >04</a
+                    >
+                  </div>
+                  <div class="pq-background-img-info">
+                    <h4 class="pq-background-img-title">
+                      <a href="stich-fabric.html"> fabric treatme </a>
+                    </h4>
+                  </div>
+                  <div class="pq-background-content">
+                    <div class="pq-background-leftimg">
+                      <img
+                        decoding="async"
+                        class="background img"
+                        src="images/slides/2.jpg"
+                        alt="textica"
+                      />
+                    </div>
+                    <div class="pq-background-rightinfo">
+                      <h4 class="pq-rightinfo-title">fabric treatme</h4>
+                      <p class="pq-rightinfo-description">
+                        Textiles are materials made from fibers or yarn, and
+                        they are used to create widetest range of products such
+                        as clothing and industrial goods.
+                      </p>
+                      <div class="pq-btn-container">
+                        <a
+                          class="pq-button pq-button-flat"
+                          href="stich-fabric.html"
+                          tabindex="0"
+                        >
+                          <div class="pq-button-block">
+                            <span class="pq-button-text">Read More</span>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="pq-svg-arrow"
+                              width="34.899"
+                              height="14.585"
+                              viewBox="0 0 34.899 14.585"
+                            >
+                              <path
+                                d="M.5,6.388c6.609,0,11.487-6.142,11.535-6.2a.6.6,0,0,1,.684-.131.33.33,0,0,1,.176.513A19.589,19.589,0,0,1,4.765,6.388H33.4c.275,0,.5.168.5.376s-.223.376-.5.376H4.765a19.591,19.591,0,0,1,8.128,5.822.331.331,0,0,1-.179.514.6.6,0,0,1-.68-.133c-.048-.062-4.926-6.2-11.535-6.2-.275,0-.5-.168-.5-.376S.223,6.388.5,6.388Z"
+                                transform="translate(34.399 14.056) rotate(180)"
+                                fill="currentColor"
+                                stroke="currentColor"
+                                stroke-width="1"
+                              ></path>
+                            </svg>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pq-background-img-item">
+                  <div class="pq-background-link">
+                    <a
+                      class="pq-background-img-number"
+                      href="we-design-fabric.html"
+                      >05</a
+                    >
+                  </div>
+                  <div class="pq-background-img-info">
+                    <h4 class="pq-background-img-title">
+                      <a href="we-design-fabric.html">We Design Fabric</a>
+                    </h4>
+                  </div>
+                  <div class="pq-background-content">
+                    <div class="pq-background-leftimg">
+                      <img
+                        decoding="async"
+                        class="background img"
+                        src="images/slides/1.png"
+                        alt="textica"
+                      />
+                    </div>
+                    <div class="pq-background-rightinfo">
+                      <h4 class="pq-rightinfo-title">We Design Fabric</h4>
+                      <p class="pq-rightinfo-description">
+                        Textiles are materials made from fibers or yarn, and
+                        they are used to create widetest range of products such
+                        as clothing and industrial goods.
+                      </p>
+                      <div class="pq-btn-container">
+                        <a
+                          class="pq-button pq-button-flat"
+                          href="we-design-fabric.html"
+                          tabindex="0"
+                        >
+                          <div class="pq-button-block">
+                            <span class="pq-button-text">Read More</span>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              class="pq-svg-arrow"
+                              width="34.899"
+                              height="14.585"
+                              viewBox="0 0 34.899 14.585"
+                            >
+                              <path
+                                d="M.5,6.388c6.609,0,11.487-6.142,11.535-6.2a.6.6,0,0,1,.684-.131.33.33,0,0,1,.176.513A19.589,19.589,0,0,1,4.765,6.388H33.4c.275,0,.5.168.5.376s-.223.376-.5.376H4.765a19.591,19.591,0,0,1,8.128,5.822.331.331,0,0,1-.179.514.6.6,0,0,1-.68-.133c-.048-.062-4.926-6.2-11.535-6.2-.275,0-.5-.168-.5-.376S.223,6.388.5,6.388Z"
+                                transform="translate(34.399 14.056) rotate(180)"
+                                fill="currentColor"
+                                stroke="currentColor"
+                                stroke-width="1"
+                              ></path>
+                            </svg>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-xl-7 mt-4 mt-xl-0 pq-ps-60">
+        </div>
+      </div>
+    </section>
+    <!-- Slides -->
+         <!-- Provide -->
+    <section class="provide pq-bg-primary pq-bg-img-2 pq-py-60">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-xl-8">
+            <div class="pq-section-title pq-style-1">
+              <h5 class="pq-section-main-title">
+                Provide the highest quality work that meets your expectation
+              </h5>
+            </div>
+          </div>
+          <div class="col-xl-4">
+            <div class="button-align">
+              <a class="pq-button pq-button-flat" href="contact.html">
+                <div class="pq-button-block">
+                  <span class="pq-button-text">contact us</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="pq-svg-arrow"
+                    width="34.899"
+                    height="14.585"
+                    viewBox="0 0 34.899 14.585"
+                  >
+                    <path
+                      d="M.5,6.388c6.609,0,11.487-6.142,11.535-6.2a.6.6,0,0,1,.684-.131.33.33,0,0,1,.176.513A19.589,19.589,0,0,1,4.765,6.388H33.4c.275,0,.5.168.5.376s-.223.376-.5.376H4.765a19.591,19.591,0,0,1,8.128,5.822.331.331,0,0,1-.179.514.6.6,0,0,1-.68-.133c-.048-.062-4.926-6.2-11.535-6.2-.275,0-.5-.168-.5-.376S.223,6.388.5,6.388Z"
+                      transform="translate(34.399 14.056) rotate(180)"
+                      fill="currentColor"
+                      stroke="currentColor"
+                      stroke-width="1"
+                    ></path>
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Provide -->
+
+    
+    <!-- Contact Form -->
+    <section class="contact-form">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 pe-xl-5">
             <div class="pq-section-title pq-style-1 pq-mb-30">
               <span class="pq-section-sub-title">
                 <img
                   decoding="async"
                   src="images/section-title/title-icon-primary.png"
                   alt="image"
-                />our testimonials
+                />LET'S TALK
               </span>
-              <h5 class="pq-section-main-title">what our happy clients say</h5>
+              <h5 class="pq-section-main-title">
+                Contact Us &amp; Get In here Touch !
+              </h5>
+              <p class="pq-section-description">
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration some form, by injected
+                humour.
+              </p>
             </div>
-            <div class="pq-testimonial-box-slider pq-style-2">
-              <div
-                class="owl-carousel owl-loaded owl-drag"
-                data-dots="false"
-                data-nav="true"
-                data-desk_num="1"
-                data-lap_num="1"
-                data-tab_num="1"
-                data-mob_num="1"
-                data-mob_sm="1"
-                data-autoplay="false"
-                data-loop="false"
-                data-margin="30"
-              >
-                <div class="item">
-                  <div class="pq-testimonial-box pq-style-2">
-                    <div class="pq-testimonial-content">
-                      <p>
-                        Textiles are materials made from fibers or yarn, and
-                        they are used to create a wide range of products such as
-                        clothing, household items, and industrial goods. The
-                        fibers used in textiles can be natural, such as cotton,
-                        wool, and silk, or synthetic, such as polyester, nylon,
-                        and acrylic. Textiles can be woven, knitted, or
-                        crocheted, and they can be dyed.
-                      </p>
-                    </div>
-                    <div class="pq-testimonial-info">
-                      <div class="pq-testimonial-meta">
-                        <div class="pq-testimonial-star">
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                        </div>
-                        <div class="pq-testimonial-img">
-                          <img
-                            decoding="async"
-                            src="images/testimonial/slider/testimonial-style-2/1.jpg"
-                            alt="testimonial-img"
-                          />
-                        </div>
-                        <div class="pq-testimonial-data">
-                          <h5>alex john martin</h5>
-                          <span>Photographer</span>
-                        </div>
-                      </div>
-                    </div>
+            <div class="map">
+              <iframe
+                src="https://maps.google.com/maps?q=London%20Eye%2C%20London%2C%20United%20Kingdom&amp;t=m&amp;z=10&amp;output=embed&amp;iwloc=near"
+                title="London Eye, London, United Kingdom"
+                aria-label="London Eye, London, United Kingdom"
+              ></iframe>
+            </div>
+          </div>
+          <div class="col-lg-6 mt-4 mt-lg-0 p-xl-0">
+            <div class="pq-form-div border-0 mt-0">
+              <h4 class="pq-form-title mb-2">Send Your Message</h4>
+              <form class="pq-applyform">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <input type="text" placeholder="Enter Name" />
+                  </div>
+                  <div class="col-lg-6 col-md-6">
+                    <input type="email" placeholder="Email Address" />
+                  </div>
+                  <div class="col-lg-6 col-md-6">
+                    <input type="text" placeholder="Phone Number" />
+                  </div>
+                  <div class="col-lg-12">
+                    <select>
+                      <option value="Service 1" selected>Service 1</option>
+                      <option value="Service 2">Service 2</option>
+                      <option value="Service 3">Service 3</option>
+                      <option value="Service 4">Service 4</option>
+                    </select>
+                  </div>
+                  <div class="col-lg-12">
+                    <textarea
+                      cols="40"
+                      rows="10"
+                      placeholder="Message"
+                    ></textarea>
+                  </div>
+                  <div class="col-lg-12">
+                    <a href="#" class="pq-button">SUBMIT</a>
                   </div>
                 </div>
-                <div class="item">
-                  <div class="pq-testimonial-box pq-style-2">
-                    <div class="pq-testimonial-content">
-                      <p>
-                        Textiles are materials made from fibers or yarn, and
-                        they are used to create a wide range of products such as
-                        clothing, household items, and industrial goods. The
-                        fibers used in textiles can be natural, such as cotton,
-                        wool, and silk, or synthetic, such as polyester, nylon,
-                        and acrylic. Textiles can be woven, knitted, or
-                        crocheted, and they can be dyed.
-                      </p>
-                    </div>
-                    <div class="pq-testimonial-info">
-                      <div class="pq-testimonial-meta">
-                        <div class="pq-testimonial-star">
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                        </div>
-                        <div class="pq-testimonial-img">
-                          <img
-                            decoding="async"
-                            src="images/testimonial/slider/testimonial-style-2/2.jpg"
-                            alt="testimonial-img"
-                          />
-                        </div>
-                        <div class="pq-testimonial-data">
-                          <h5>Leia Organa</h5>
-                          <span>Fashion Designer</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="pq-testimonial-box pq-style-2">
-                    <div class="pq-testimonial-content">
-                      <p>
-                        Textiles are materials made from fibers or yarn, and
-                        they are used to create a wide range of products such as
-                        clothing, household items, and industrial goods. The
-                        fibers used in textiles can be natural, such as cotton,
-                        wool, and silk, or synthetic, such as polyester, nylon,
-                        and acrylic. Textiles can be woven, knitted, or
-                        crocheted, and they can be dyed.
-                      </p>
-                    </div>
-                    <div class="pq-testimonial-info">
-                      <div class="pq-testimonial-meta">
-                        <div class="pq-testimonial-star">
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                        </div>
-                        <div class="pq-testimonial-img">
-                          <img
-                            decoding="async"
-                            src="images/testimonial/slider/testimonial-style-2/3.jpg"
-                            alt="testimonial-img"
-                          />
-                        </div>
-                        <div class="pq-testimonial-data">
-                          <h5>David K. Morris</h5>
-                          <span>Photographer</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="pq-testimonial-box pq-style-2">
-                    <div class="pq-testimonial-content">
-                      <p>
-                        Textiles are materials made from fibers or yarn, and
-                        they are used to create a wide range of products such as
-                        clothing, household items, and industrial goods. The
-                        fibers used in textiles can be natural, such as cotton,
-                        wool, and silk, or synthetic, such as polyester, nylon,
-                        and acrylic. Textiles can be woven, knitted, or
-                        crocheted, and they can be dyed.
-                      </p>
-                    </div>
-                    <div class="pq-testimonial-info">
-                      <div class="pq-testimonial-meta">
-                        <div class="pq-testimonial-star">
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                          <i class="fa fa-star"></i>
-                        </div>
-                        <div class="pq-testimonial-img">
-                          <img
-                            decoding="async"
-                            src="images/testimonial/slider/testimonial-style-2/4.jpg"
-                            alt="testimonial-img"
-                          />
-                        </div>
-                        <div class="pq-testimonial-data">
-                          <h5>alex john martin</h5>
-                          <span>Photographer</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <!-- Testimonial -->
+    <!-- Contact Form -->
 
-    <!-- Blog -->
-    <section class="blog pq-pq-210 wow animated fadeInUp">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="pq-section-title pq-style-1 text-center">
-              <span class="pq-section-sub-title">
-                <img
-                  decoding="async"
-                  src="images/section-title/title-icon-primary.png"
-                  alt="image"
-                />our latest blog
-              </span>
-              <h5 class="pq-section-main-title">whatch our latest blog</h5>
-            </div>
-          </div>
-          <div class="col-lg-12">
-            <div class="pq-blog">
-              <div class="row">
-                <div class="pq-blog-post pq-list">
-                  <div class="pq-blog-area">
-                    <div class="pq-post-meta">
-                      <div class="pq-post-date">
-                        <a href="strategies-for-reducing-environmental.html">
-                          <span class="pq-post-blk">13</span>Apr 2023
-                        </a>
-                      </div>
-                    </div>
-                    <div class="pq-blog-contain">
-                      <div class="pq-post-contain">
-                        <ul>
-                          <li class="pq-post-category">
-                            <a href="strategies-for-reducing-environmental.html"
-                              ><i class="fa fa-tag"></i>Home Textiles</a
-                            >
-                          </li>
-                          <li class="pq-post-comment">
-                            <a href="strategies-for-reducing-environmental.html"
-                              >0 Comments</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                      <h5 class="pq-blog-title">
-                        <a href="strategies-for-reducing-environmental.html"
-                          >Strategies for Reducing Environmental</a
-                        >
-                      </h5>
-                    </div>
-                    <div class="pq-post-media">
+
+    <section class="ts-body">
+      <div class="te-container">
+        <div class="te-header">
+          <h2 class="te-header-title">Client Testimonials</h2>
+          <p class="te-header-subtitle">What our valued clients say about us</p>
+        </div>
+
+        <div class="te-slider-wrapper">
+          <button class="te-nav-btn prev" onclick="prevSlide()">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+
+          <div class="te-slider">
+            <i class="fas fa-quote-left te-quote-icon"></i>
+            <div class="te-slides" id="teSlides">
+              <!-- Slide 1 -->
+              <div class="te-slide">
+                <div class="te-content">
+                  <div class="te-profile">
+                    <div class="te-avatar-wrapper">
                       <img
-                        decoding="async"
-                        src="images/blog/list/1.jpg"
-                        alt=""
+                        src="https://i.pravatar.cc/150?img=12"
+                        alt="Sarah Johnson"
+                        class="te-avatar"
                       />
+                      <span class="te-verified-badge">
+                        <i class="fas fa-check"></i>
+                      </span>
                     </div>
-                    <div class="pq-btn-container">
-                      <a
-                        href="strategies-for-reducing-environmental.html"
-                        class="pq-button pq-button-flat"
-                      >
-                        <div class="pq-button-block">
-                          <span class="pq-button-text">Read more</span>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="pq-svg-arrow"
-                            width="34.899"
-                            height="14.585"
-                            viewBox="0 0 34.899 14.585"
-                          >
-                            <path
-                              d="M.5,6.388c6.609,0,11.487-6.142,11.535-6.2a.6.6,0,0,1,.684-.131.33.33,0,0,1,.176.513A19.589,19.589,0,0,1,4.765,6.388H33.4c.275,0,.5.168.5.376s-.223.376-.5.376H4.765a19.591,19.591,0,0,1,8.128,5.822.331.331,0,0,1-.179.514.6.6,0,0,1-.68-.133c-.048-.062-4.926-6.2-11.535-6.2-.275,0-.5-.168-.5-.376S.223,6.388.5,6.388Z"
-                              transform="translate(34.399 14.056) rotate(180)"
-                              fill="currentColor"
-                              stroke="currentColor"
-                              stroke-width="1"
-                            ></path>
-                          </svg>
-                        </div>
-                      </a>
+                    <div class="te-profile-info">
+                      <h3 class="te-name">Sarah Johnson</h3>
+                      <p class="te-position">CEO, TechVision Inc.</p>
+                      <div class="te-rating">
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="te-text">
+                    "Working with this team has been an absolute game-changer
+                    for our business. Their professionalism, attention to
+                    detail, and innovative approach exceeded all our
+                    expectations. The results speak for themselves - we've seen
+                    a 300% increase in engagement."
+                  </p>
+                  <div class="te-meta">
+                    <div class="te-meta-item">
+                      <i class="far fa-calendar-alt te-meta-icon"></i>
+                      <span>October 2024</span>
+                    </div>
+                    <div class="te-meta-item">
+                      <i class="fas fa-briefcase te-meta-icon"></i>
+                      <span>Technology</span>
                     </div>
                   </div>
                 </div>
-                <div class="pq-blog-post pq-list">
-                  <div class="pq-blog-area">
-                    <div class="pq-post-meta">
-                      <div class="pq-post-date">
-                        <a href="strategies-for-reducing-environmental.html">
-                          <span class="pq-post-blk">13</span>Apr 2023
-                        </a>
-                      </div>
-                    </div>
-                    <div class="pq-blog-contain">
-                      <div class="pq-post-contain">
-                        <ul>
-                          <li class="pq-post-category">
-                            <a href="strategies-for-reducing-environmental.html"
-                              ><i class="fa fa-tag"></i>Tailoring</a
-                            >
-                          </li>
-                          <li class="pq-post-comment">
-                            <a href="strategies-for-reducing-environmental.html"
-                              >0 Comments</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                      <h5 class="pq-blog-title">
-                        <a href="strategies-for-reducing-environmental.html"
-                          >These services involve repairing&nbsp;</a
-                        >
-                      </h5>
-                    </div>
-                    <div class="pq-post-media">
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="te-slide">
+                <div class="te-content">
+                  <div class="te-profile">
+                    <div class="te-avatar-wrapper">
                       <img
-                        decoding="async"
-                        src="images/blog/list/2.jpg"
-                        alt=""
+                        src="https://i.pravatar.cc/150?img=33"
+                        alt="Michael Chen"
+                        class="te-avatar"
                       />
+                      <span class="te-verified-badge">
+                        <i class="fas fa-check"></i>
+                      </span>
                     </div>
-                    <div class="pq-btn-container">
-                      <a
-                        href="strategies-for-reducing-environmental.html"
-                        class="pq-button pq-button-flat"
-                      >
-                        <div class="pq-button-block">
-                          <span class="pq-button-text">Read more</span>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="pq-svg-arrow"
-                            width="34.899"
-                            height="14.585"
-                            viewBox="0 0 34.899 14.585"
-                          >
-                            <path
-                              d="M.5,6.388c6.609,0,11.487-6.142,11.535-6.2a.6.6,0,0,1,.684-.131.33.33,0,0,1,.176.513A19.589,19.589,0,0,1,4.765,6.388H33.4c.275,0,.5.168.5.376s-.223.376-.5.376H4.765a19.591,19.591,0,0,1,8.128,5.822.331.331,0,0,1-.179.514.6.6,0,0,1-.68-.133c-.048-.062-4.926-6.2-11.535-6.2-.275,0-.5-.168-.5-.376S.223,6.388.5,6.388Z"
-                              transform="translate(34.399 14.056) rotate(180)"
-                              fill="currentColor"
-                              stroke="currentColor"
-                              stroke-width="1"
-                            ></path>
-                          </svg>
-                        </div>
-                      </a>
+                    <div class="te-profile-info">
+                      <h3 class="te-name">Michael Chen</h3>
+                      <p class="te-position">Founder, Digital Dynamics</p>
+                      <div class="te-rating">
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="te-text">
+                    "Exceptional service from start to finish! The team's
+                    expertise and dedication transformed our vision into
+                    reality. Their strategic insights and creative solutions
+                    have positioned us as industry leaders. I couldn't recommend
+                    them more highly."
+                  </p>
+                  <div class="te-meta">
+                    <div class="te-meta-item">
+                      <i class="far fa-calendar-alt te-meta-icon"></i>
+                      <span>September 2024</span>
+                    </div>
+                    <div class="te-meta-item">
+                      <i class="fas fa-briefcase te-meta-icon"></i>
+                      <span>Marketing</span>
                     </div>
                   </div>
                 </div>
-                <div class="pq-blog-post pq-list">
-                  <div class="pq-blog-area">
-                    <div class="pq-post-meta">
-                      <div class="pq-post-date">
-                        <a href="strategies-for-reducing-environmental.html">
-                          <span class="pq-post-blk">13</span>Apr 2023
-                        </a>
-                      </div>
-                    </div>
-                    <div class="pq-blog-contain">
-                      <div class="pq-post-contain">
-                        <ul>
-                          <li class="pq-post-category">
-                            <a href="strategies-for-reducing-environmental.html"
-                              ><i class="fa fa-tag"></i>Tailoring</a
-                            >
-                          </li>
-                          <li class="pq-post-comment">
-                            <a href="strategies-for-reducing-environmental.html"
-                              >0 Comments</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                      <h5 class="pq-blog-title">
-                        <a href="strategies-for-reducing-environmental.html"
-                          >textile services provide businesses</a
-                        >
-                      </h5>
-                    </div>
-                    <div class="pq-post-media">
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="te-slide">
+                <div class="te-content">
+                  <div class="te-profile">
+                    <div class="te-avatar-wrapper">
                       <img
-                        decoding="async"
-                        src="images/blog/list/3.jpg"
-                        alt=""
+                        src="https://i.pravatar.cc/150?img=47"
+                        alt="Emily Rodriguez"
+                        class="te-avatar"
                       />
+                      <span class="te-verified-badge">
+                        <i class="fas fa-check"></i>
+                      </span>
                     </div>
-                    <div class="pq-btn-container">
-                      <a
-                        href="strategies-for-reducing-environmental.html"
-                        class="pq-button pq-button-flat"
-                      >
-                        <div class="pq-button-block">
-                          <span class="pq-button-text">Read more</span>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            class="pq-svg-arrow"
-                            width="34.899"
-                            height="14.585"
-                            viewBox="0 0 34.899 14.585"
-                          >
-                            <path
-                              d="M.5,6.388c6.609,0,11.487-6.142,11.535-6.2a.6.6,0,0,1,.684-.131.33.33,0,0,1,.176.513A19.589,19.589,0,0,1,4.765,6.388H33.4c.275,0,.5.168.5.376s-.223.376-.5.376H4.765a19.591,19.591,0,0,1,8.128,5.822.331.331,0,0,1-.179.514.6.6,0,0,1-.68-.133c-.048-.062-4.926-6.2-11.535-6.2-.275,0-.5-.168-.5-.376S.223,6.388.5,6.388Z"
-                              transform="translate(34.399 14.056) rotate(180)"
-                              fill="currentColor"
-                              stroke="currentColor"
-                              stroke-width="1"
-                            ></path>
-                          </svg>
-                        </div>
-                      </a>
+                    <div class="te-profile-info">
+                      <h3 class="te-name">Emily Rodriguez</h3>
+                      <p class="te-position">Director, Creative Solutions</p>
+                      <div class="te-rating">
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                        <i class="fas fa-star te-star"></i>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="te-text">
+                    "Outstanding quality and remarkable professionalism! Every
+                    interaction was smooth, and the final deliverables were
+                    beyond impressive. They truly understand client needs and
+                    deliver excellence consistently. A trusted partner for all
+                    our projects."
+                  </p>
+                  <div class="te-meta">
+                    <div class="te-meta-item">
+                      <i class="far fa-calendar-alt te-meta-icon"></i>
+                      <span>November 2024</span>
+                    </div>
+                    <div class="te-meta-item">
+                      <i class="fas fa-briefcase te-meta-icon"></i>
+                      <span>Design</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          <button class="te-nav-btn next" onclick="nextSlide()">
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
+
+        <div class="te-dots" id="teDots"></div>
       </div>
     </section>
-    <!-- Blog -->
+
 
     <!-- Footer -->
     <footer id="pq-footer">

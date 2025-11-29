@@ -544,3 +544,116 @@ dots.forEach((dot, index) => {
 });
 
 startAutoplay();
+
+let tsCurrentSlide = 0;
+const tsSlides = document.querySelectorAll('.te-slide');
+const tsTotalSlides = tsSlides.length;
+const tsSlidesContainer = document.getElementById('teSlides');
+const tsDotsContainer = document.getElementById('teDots');
+let tsAutoPlayInterval = null;
+const tsAutoPlayDelay = 6000;
+const tsTransitionDuration = 600;
+
+function tsCreateDots() {
+  for (let tsIndex = 0; tsIndex < tsTotalSlides; tsIndex++) {
+    const tsDot = document.createElement('button');
+    tsDot.classList.add('te-dot');
+    tsDot.setAttribute('aria-label', `Go to testimonial ${tsIndex + 1}`);
+    if (tsIndex === 0) tsDot.classList.add('active');
+    tsDot.addEventListener('click', () => tsGoToSlide(tsIndex));
+    tsDotsContainer.appendChild(tsDot);
+  }
+}
+
+function tsUpdateDots() {
+  const tsDots = document.querySelectorAll('.te-dot');
+  tsDots.forEach((tsDot, tsIndex) => {
+    tsDot.classList.toggle('active', tsIndex === tsCurrentSlide);
+  });
+}
+
+function tsGoToSlide(tsIndex) {
+  if (tsIndex === tsCurrentSlide) return;
+  tsCurrentSlide = tsIndex;
+  tsSlidesContainer.style.transform = `translateX(-${tsCurrentSlide * 100}%)`;
+  tsUpdateDots();
+}
+
+function tsNextSlide() {
+  tsCurrentSlide = (tsCurrentSlide + 1) % tsTotalSlides;
+  tsGoToSlide(tsCurrentSlide);
+}
+
+function tsPrevSlide() {
+  tsCurrentSlide = (tsCurrentSlide - 1 + tsTotalSlides) % tsTotalSlides;
+  tsGoToSlide(tsCurrentSlide);
+}
+
+function tsStartAutoPlay() {
+  tsAutoPlayInterval = setInterval(tsNextSlide, tsAutoPlayDelay);
+}
+
+function tsStopAutoPlay() {
+  if (tsAutoPlayInterval) {
+    clearInterval(tsAutoPlayInterval);
+    tsAutoPlayInterval = null;
+  }
+}
+
+function nextSlide() {
+  tsNextSlide();
+}
+
+function prevSlide() {
+  tsPrevSlide();
+}
+
+tsCreateDots();
+tsStartAutoPlay();
+
+const tsSliderWrapper = document.querySelector('.te-slider-wrapper');
+tsSliderWrapper.addEventListener('mouseenter', tsStopAutoPlay);
+tsSliderWrapper.addEventListener('mouseleave', tsStartAutoPlay);
+
+document.addEventListener('keydown', (tsEvent) => {
+  if (tsEvent.key === 'ArrowLeft') {
+    tsPrevSlide();
+    tsStopAutoPlay();
+  } else if (tsEvent.key === 'ArrowRight') {
+    tsNextSlide();
+    tsStopAutoPlay();
+  }
+});
+
+let tsTouchStartX = 0;
+let tsTouchEndX = 0;
+const tsSwipeThreshold = 50;
+
+tsSliderWrapper.addEventListener(
+  'touchstart',
+  (tsEvent) => {
+    tsTouchStartX = tsEvent.changedTouches[0].screenX;
+  },
+  { passive: true }
+);
+
+tsSliderWrapper.addEventListener(
+  'touchend',
+  (tsEvent) => {
+    tsTouchEndX = tsEvent.changedTouches[0].screenX;
+    tsHandleSwipe();
+  },
+  { passive: true }
+);
+
+function tsHandleSwipe() {
+  const tsSwipeDistance = tsTouchStartX - tsTouchEndX;
+  if (Math.abs(tsSwipeDistance) > tsSwipeThreshold) {
+    if (tsSwipeDistance > 0) {
+      tsNextSlide();
+    } else {
+      tsPrevSlide();
+    }
+    tsStopAutoPlay();
+  }
+}
