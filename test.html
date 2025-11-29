@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Metro Cotton Mill</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700;800&family=Open+Sans:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary-color: #aa1e25;
+        --dark-color: #272b36;
+        --secondary-color: #666666;
+        --grey-color: #f5f5f5;
+        --white-color: #ffffff;
+        --title-fonts: 'Red Hat Display', sans-serif;
+        --body-fonts: 'Open Sans', sans-serif;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--body-fonts);
+        color: var(--dark-color);
+        line-height: 1.6;
+        background: var(--white-color);
+      }
+
+      .de-about-section {
+        padding: 100px 0;
+        background: var(--white-color);
+      }
+
+      .de-container {
+        max-width: 1320px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .de-section-header {
+        margin-bottom: 60px;
+      }
+
+      .de-section-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--primary-color);
+        font-family: var(--title-fonts);
+        font-weight: 600;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+      }
+
+      .de-section-tag i {
+        font-size: 20px;
+      }
+
+      .de-main-title {
+        font-family: var(--title-fonts);
+        font-size: 48px;
+        font-weight: 800;
+        color: var(--dark-color);
+        line-height: 1.2;
+        margin-bottom: 25px;
+        max-width: 600px;
+      }
+
+      .de-content-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+        margin-bottom: 80px;
+      }
+
+      .de-text-content p {
+        font-size: 16px;
+        color: var(--secondary-color);
+        margin-bottom: 20px;
+        line-height: 1.8;
+      }
+
+      .de-image-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 180px);
+        gap: 20px;
+      }
+
+      .de-grid-item {
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .de-grid-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .de-grid-item:hover img {
+        transform: scale(1.05);
+      }
+
+      .de-grid-item-1 {
+        grid-row: 1 / 2;
+      }
+
+      .de-grid-item-2 {
+        grid-row: 1 / 3;
+      }
+
+      .de-grid-item-3 {
+        grid-row: 2 / 4;
+      }
+
+      .de-grid-item-4 {
+        grid-row: 3 / 4;
+      }
+
+      .de-experience-badge {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background: var(--white-color);
+        padding: 30px 40px;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+      }
+
+      .de-experience-number {
+        font-family: var(--title-fonts);
+        font-size: 56px;
+        font-weight: 800;
+        color: var(--primary-color);
+        line-height: 1;
+        margin-bottom: 5px;
+      }
+
+      .de-experience-text {
+        font-family: var(--title-fonts);
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--dark-color);
+        line-height: 1.4;
+        max-width: 140px;
+      }
+
+      .de-features-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+      }
+
+      .de-feature-card {
+        display: flex;
+        gap: 25px;
+        padding: 40px;
+        background: var(--grey-color);
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .de-feature-card:hover {
+        background: var(--white-color);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        transform: translateY(-5px);
+      }
+
+      .de-feature-icon {
+        flex-shrink: 0;
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--white-color);
+        border-radius: 8px;
+        color: var(--primary-color);
+        font-size: 32px;
+      }
+
+      .de-feature-card:hover .de-feature-icon {
+        background: var(--primary-color);
+        color: var(--white-color);
+      }
+
+      .de-feature-content h3 {
+        font-family: var(--title-fonts);
+        font-size: 22px;
+        font-weight: 700;
+        color: var(--dark-color);
+        margin-bottom: 12px;
+      }
+
+      .de-feature-content p {
+        font-size: 15px;
+        color: var(--secondary-color);
+        line-height: 1.7;
+        margin: 0;
+      }
+
+      .de-cta-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 18px 40px;
+        background: var(--primary-color);
+        color: var(--white-color);
+        font-family: var(--title-fonts);
+        font-weight: 600;
+        font-size: 15px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 40px;
+      }
+
+      .de-cta-button:hover {
+        background: var(--dark-color);
+        transform: translateX(5px);
+      }
+
+      .de-cta-button i {
+        font-size: 18px;
+        transition: transform 0.3s ease;
+      }
+
+      .de-cta-button:hover i {
+        transform: translateX(5px);
+      }
+
+      @media (max-width: 1024px) {
+        .de-content-wrapper {
+          grid-template-columns: 1fr;
+          gap: 50px;
+        }
+
+        .de-features-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .de-main-title {
+          font-size: 40px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .de-about-section {
+          padding: 60px 0;
+        }
+
+        .de-main-title {
+          font-size: 32px;
+        }
+
+        .de-image-grid {
+          grid-template-rows: repeat(3, 150px);
+          gap: 15px;
+        }
+
+        .de-experience-badge {
+          padding: 20px 30px;
+          bottom: 15px;
+          right: 15px;
+        }
+
+        .de-experience-number {
+          font-size: 42px;
+        }
+
+        .de-experience-text {
+          font-size: 12px;
+        }
+
+        .de-feature-card {
+          padding: 30px;
+          gap: 20px;
+        }
+
+        .de-feature-icon {
+          width: 60px;
+          height: 60px;
+          font-size: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="de-about-section">
+      <div class="de-container">
+        <div class="de-section-header">
+          <div class="de-section-tag">
+            <i class="fas fa-cube"></i>
+            ABOUT US
+          </div>
+          <h1 class="de-main-title">
+            Leading Pakistan's Textile Industry Since 1967
+          </h1>
+        </div>
+
+        <div class="de-content-wrapper">
+          <div class="de-text-content">
+            <p>
+              At Metro Cotton Mill (Pvt) Ltd., we bring over five decades of
+              innovation, craftsmanship, and excellence to the textile industry.
+              From our humble beginnings in 1967 as a fabric manufacturer, we
+              have grown into one of Pakistan's most trusted and progressive
+              textile groups.
+            </p>
+
+            <p>
+              For more than 30 years, we dominated the local menswear market
+              with state-of-the-art looms, advanced dyeing units, and
+              high-precision finishing facilities. In the last two decades, we
+              expanded our vision to global markets—exporting premium textiles
+              to the USA and Europe.
+            </p>
+
+            <p>
+              Today, we specialize in manufacturing home textiles, scrubs,
+              uniforms, reusable bags, and eco-friendly packaging, proudly
+              supplying leading retailers and wholesalers worldwide.
+            </p>
+          </div>
+
+          <div class="de-image-grid">
+            <div class="de-grid-item de-grid-item-1">
+              <img
+                src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=800&q=80"
+                alt="Textile Manufacturing"
+              />
+            </div>
+            <div class="de-grid-item de-grid-item-2">
+              <img
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
+                alt="Quality Control"
+              />
+            </div>
+            <div class="de-grid-item de-grid-item-3">
+              <img
+                src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=800&q=80"
+                alt="Fabric Production"
+              />
+            </div>
+            <div class="de-grid-item de-grid-item-4">
+              <img
+                src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=800&q=80"
+                alt="Textile Worker"
+              />
+            </div>
+
+            <div class="de-experience-badge">
+              <div class="de-experience-number">58+</div>
+              <div class="de-experience-text">Year Experience Working</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="de-features-grid">
+          <div class="de-feature-card">
+            <div class="de-feature-icon">
+              <i class="fas fa-industry"></i>
+            </div>
+            <div class="de-feature-content">
+              <h3>Premium Textile Manufacturing</h3>
+              <p>
+                Equipped with modern weaving, dyeing, and finishing
+                technologies, we deliver high-quality fabrics trusted by global
+                brands across multiple industries.
+              </p>
+            </div>
+          </div>
+
+          <div class="de-feature-card">
+            <div class="de-feature-icon">
+              <i class="fas fa-clipboard-list"></i>
+            </div>
+            <div class="de-feature-content">
+              <h3>Customized Product Solutions</h3>
+              <p>
+                From home textiles to uniforms, scrubs, and eco-friendly bags,
+                we offer fully customizable production solutions designed to
+                meet the unique needs of international retailers and
+                wholesalers.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <button class="de-cta-button">
+          READ MORE
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </section>
+  </body>
+</html>
