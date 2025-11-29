@@ -1,610 +1,583 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Metro Cotton Mill</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700;800;900&family=Open+Sans:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Products Section</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-      :root {
-        --primary-color: #aa1e25;
-        --dark-color: #272b36;
-        --secondary-color: #666666;
-        --grey-color: #f5f5f5;
-        --white-color: #ffffff;
-        --title-fonts: 'Red Hat Display', sans-serif;
-        --body-fonts: 'Open Sans', sans-serif;
-      }
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: var(--body-fonts);
-        color: var(--dark-color);
-        line-height: 1.6;
-        background: var(--white-color);
-      }
-
-      .ab-about-wrapper {
-        padding: 120px 0;
-        background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .ab-about-wrapper::before {
-        content: '';
-        position: absolute;
-        top: -50%;
-        right: -10%;
-        width: 800px;
-        height: 800px;
-        background: radial-gradient(
-          circle,
-          rgba(170, 30, 37, 0.03) 0%,
-          transparent 70%
-        );
-        border-radius: 50%;
-        pointer-events: none;
-      }
-
-      .ab-container-main {
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 40px;
-        position: relative;
-        z-index: 1;
-      }
-
-      .ab-header-section {
-        margin-bottom: 80px;
-        text-align: left;
-      }
-
-      .ab-tag-label {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-        padding: 10px 24px;
-        background: linear-gradient(
-          135deg,
-          rgba(170, 30, 37, 0.08) 0%,
-          rgba(170, 30, 37, 0.12) 100%
-        );
-        border-left: 3px solid var(--primary-color);
-        border-radius: 50px;
-        color: var(--primary-color);
-        font-family: var(--title-fonts);
-        font-weight: 700;
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 2.5px;
-        margin-bottom: 24px;
-      }
-
-      .ab-tag-label i {
-        font-size: 16px;
-      }
-
-      .ab-title-primary {
-        font-family: var(--title-fonts);
-        font-size: 44px;
-        font-weight: 900;
-        color: var(--dark-color);
-        line-height: 1.15;
-        margin-bottom: 28px;
-        max-width: 750px;
-        letter-spacing: -1px;
-      }
-
-      .ab-title-primary span {
-        color: var(--primary-color);
-        position: relative;
-        display: inline-block;
-      }
-
-      .ab-subtitle-text {
-        font-size: 18px;
-        color: var(--secondary-color);
-        max-width: 680px;
-        line-height: 1.9;
-        font-weight: 400;
-      }
-
-      .ab-main-grid {
-        display: grid;
-        grid-template-columns: 1fr 1.1fr;
-        gap: 100px;
-        align-items: start;
-        margin-bottom: 100px;
-      }
-
-      .ab-content-left {
-        position: sticky;
-        top: 120px;
-      }
-
-      .ab-description-block {
-        margin-bottom: 35px;
-      }
-
-      .ab-description-block p {
-        font-size: 16px;
-        color: var(--secondary-color);
-        line-height: 1.9;
-        margin-bottom: 20px;
-      }
-
-      .ab-description-block p:last-child {
-        margin-bottom: 0;
-      }
-
-      .ab-stats-row {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-        margin-top: 50px;
-        padding-top: 40px;
-        border-top: 2px solid #e8e8e8;
-      }
-
-      .ab-stat-item {
-        text-align: left;
-      }
-
-      .ab-stat-number {
-        font-family: var(--title-fonts);
-        font-size: 48px;
-        font-weight: 900;
-        color: var(--primary-color);
-        line-height: 1;
-        margin-bottom: 8px;
-        letter-spacing: -1px;
-      }
-
-      .ab-stat-label {
-        font-family: var(--title-fonts);
-        font-size: 14px;
-        font-weight: 600;
-        color: var(--dark-color);
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-
-      .ab-gallery-mosaic {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows: repeat(8, 80px);
-        gap: 20px;
-        position: relative;
-      }
-
-      .ab-image-box {
-        border-radius: 12px;
-        overflow: hidden;
-        position: relative;
-        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .ab-image-box::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(
-          180deg,
-          transparent 0%,
-          rgba(0, 0, 0, 0.3) 100%
-        );
-        opacity: 0;
-        transition: opacity 0.4s ease;
-        z-index: 1;
-      }
-
-      .ab-image-box:hover::before {
-        opacity: 1;
-      }
-
-      .ab-image-box:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-      }
-
-      .ab-image-box img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .ab-image-box:hover img {
-        transform: scale(1.08);
-      }
-
-      .ab-box-1 {
-        grid-column: 1 / 7;
-        grid-row: 1 / 5;
-      }
-
-      .ab-box-2 {
-        grid-column: 7 / 13;
-        grid-row: 1 / 4;
-      }
-
-      .ab-box-3 {
-        grid-column: 1 / 6;
-        grid-row: 5 / 9;
-      }
-
-      .ab-box-4 {
-        grid-column: 6 / 10;
-        grid-row: 4 / 7;
-      }
-
-      .ab-box-5 {
-        grid-column: 10 / 13;
-        grid-row: 4 / 9;
-      }
-
-      .ab-badge-experience {
-        position: absolute;
-        bottom: 30px;
-        right: 30px;
-        background: var(--white-color);
-        padding: 38px 45px;
-        border-radius: 16px;
-        text-align: center;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
-        z-index: 10;
-        border: 1px solid rgba(170, 30, 37, 0.1);
-      }
-
-      .ab-badge-number {
-        font-family: var(--title-fonts);
-        font-size: 64px;
-        font-weight: 900;
-        background: linear-gradient(135deg, #aa1e25 0%, #d4292f 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        line-height: 1;
-        margin-bottom: 8px;
-        letter-spacing: -2px;
-      }
-
-      .ab-badge-text {
-        font-family: var(--title-fonts);
-        font-size: 13px;
-        font-weight: 700;
-        color: var(--dark-color);
-        line-height: 1.4;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-
-      .ab-service-description {
-        font-size: 15px;
-        color: var(--secondary-color);
-        line-height: 1.8;
-        margin: 0;
-      }
-
-      .ab-cta-wrapper {
-        margin-top: 60px;
-        display: flex;
-        gap: 20px;
-        align-items: center;
-      }
-
-      .ab-button-primary {
-        display: inline-flex;
-        align-items: center;
-        gap: 14px;
-        padding: 20px 45px;
-        background: linear-gradient(
-          135deg,
-          var(--primary-color) 0%,
-          #8a1820 100%
-        );
-        color: var(--white-color);
-        font-family: var(--title-fonts);
-        font-weight: 700;
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 10px 30px rgba(170, 30, 37, 0.3);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .ab-button-primary::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(255, 255, 255, 0.2),
-          transparent
-        );
-        transition: left 0.6s ease;
-      }
-
-      .ab-button-primary:hover::before {
-        left: 100%;
-      }
-
-      .ab-button-primary:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 15px 40px rgba(170, 30, 37, 0.4);
-      }
-
-      .ab-button-primary i {
-        font-size: 16px;
-        transition: transform 0.3s ease;
-      }
-
-      .ab-button-primary:hover i {
-        transform: translateX(5px);
-      }
-
-      .ab-decorative-line {
-        width: 120px;
-        height: 2px;
-        background: linear-gradient(
-          90deg,
-          var(--primary-color) 0%,
-          transparent 100%
-        );
-      }
-
-      @media (max-width: 1200px) {
-        .ab-main-grid {
-          grid-template-columns: 1fr;
-          gap: 60px;
+        :root {
+            --primary-color: #aa1e25;
+            --dark-color: #272b36;
+            --secondary-color: #666666;
+            --grey-color: #f5f5f5;
+            --white-color: #ffffff;
+            --title-fonts: 'Red Hat Display', sans-serif;
+            --body-fonts: 'Open Sans', sans-serif;
         }
 
-        .ab-content-left {
-          position: relative;
-          top: 0;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .ab-gallery-mosaic {
-          grid-template-rows: repeat(8, 70px);
-        }
-      }
-
-      @media (max-width: 768px) {
-        .ab-about-wrapper {
-          padding: 80px 0;
+        body {
+            font-family: var(--body-fonts);
+            background-color: var(--white-color);
+            color: var(--dark-color);
+            line-height: 1.6;
         }
 
-        .ab-container-main {
-          padding: 0 20px;
+        .de-products-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, var(--grey-color) 0%, var(--white-color) 100%);
         }
 
-        .ab-title-primary {
-          font-size: 36px;
+        .de-container {
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        .ab-subtitle-text {
-          font-size: 16px;
+        .de-section-header {
+            text-align: center;
+            margin-bottom: 60px;
         }
 
-        .ab-stats-row {
-          grid-template-columns: 1fr;
-          gap: 25px;
+        .de-section-subtitle {
+            color: var(--primary-color);
+            font-family: var(--title-fonts);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
-        .ab-gallery-mosaic {
-          grid-template-columns: repeat(6, 1fr);
-          grid-template-rows: repeat(10, 60px);
-          gap: 12px;
+        .de-section-title {
+            font-family: var(--title-fonts);
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 16px;
+            line-height: 1.2;
         }
 
-        .ab-box-1 {
-          grid-column: 1 / 7;
-          grid-row: 1 / 4;
+        .de-section-description {
+            font-size: 16px;
+            color: var(--secondary-color);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .ab-box-2 {
-          grid-column: 1 / 4;
-          grid-row: 4 / 7;
+        .de-products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
         }
 
-        .ab-box-3 {
-          grid-column: 4 / 7;
-          grid-row: 4 / 7;
+        .de-product-card {
+            background: var(--white-color);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            position: relative;
         }
 
-        .ab-box-4 {
-          grid-column: 1 / 4;
-          grid-row: 7 / 9;
+        .de-product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(170, 30, 37, 0.15);
         }
 
-        .ab-box-5 {
-          grid-column: 4 / 7;
-          grid-row: 7 / 11;
+        .de-product-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: var(--grey-color);
+            height: 280px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .ab-badge-experience {
-          padding: 25px 35px;
-          bottom: 15px;
-          right: 15px;
+        .de-product-badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: var(--primary-color);
+            color: var(--white-color);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 2;
+            font-family: var(--title-fonts);
         }
 
-        .ab-badge-number {
-          font-size: 48px;
+        .de-product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
         }
 
-        .ab-badge-text {
-          font-size: 11px;
+        .de-product-card:hover .de-product-image {
+            transform: scale(1.08);
         }
 
-        .ab-cta-wrapper {
-          flex-direction: column;
-          align-items: flex-start;
+        .de-product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(39, 43, 54, 0.7) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
 
-        .ab-decorative-line {
-          display: none;
+        .de-product-card:hover .de-product-overlay {
+            opacity: 1;
         }
-      }
+
+        .de-product-actions {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            opacity: 0;
+            transition: all 0.4s ease;
+            display: flex;
+            gap: 10px;
+            z-index: 3;
+        }
+
+        .de-product-card:hover .de-product-actions {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+
+        .de-action-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--white-color);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            color: var(--dark-color);
+        }
+
+        .de-action-btn:hover {
+            background: var(--primary-color);
+            color: var(--white-color);
+            transform: scale(1.1);
+        }
+
+        .de-product-content {
+            padding: 24px;
+        }
+
+        .de-product-category {
+            color: var(--secondary-color);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .de-product-title {
+            font-family: var(--title-fonts);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--dark-color);
+            margin-bottom: 12px;
+            line-height: 1.3;
+            min-height: 52px;
+        }
+
+        .de-product-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .de-stars {
+            color: #ffa500;
+            font-size: 14px;
+        }
+
+        .de-rating-count {
+            color: var(--secondary-color);
+            font-size: 13px;
+        }
+
+        .de-product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 16px;
+            border-top: 1px solid var(--grey-color);
+        }
+
+        .de-product-price {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .de-price-current {
+            font-family: var(--title-fonts);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .de-price-original {
+            font-size: 16px;
+            color: var(--secondary-color);
+            text-decoration: line-through;
+        }
+
+        .de-cart-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            border: none;
+            color: var(--white-color);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .de-cart-btn:hover {
+            background: var(--dark-color);
+            transform: rotate(12deg);
+        }
+
+        .de-view-all-wrapper {
+            text-align: center;
+        }
+
+        .de-view-all-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 40px;
+            background: var(--primary-color);
+            color: var(--white-color);
+            font-family: var(--title-fonts);
+            font-size: 16px;
+            font-weight: 600;
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+        }
+
+        .de-view-all-btn:hover {
+            background: transparent;
+            color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(170, 30, 37, 0.2);
+        }
+
+        .de-view-all-btn i {
+            transition: transform 0.4s ease;
+        }
+
+        .de-view-all-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Tablet Styles */
+        @media (max-width: 1024px) {
+            .de-products-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 25px;
+            }
+
+            .de-section-title {
+                font-size: 36px;
+            }
+
+            .de-product-image-wrapper {
+                height: 240px;
+            }
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .de-products-section {
+                padding: 60px 16px;
+            }
+
+            .de-products-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .de-section-header {
+                margin-bottom: 40px;
+            }
+
+            .de-section-title {
+                font-size: 28px;
+            }
+
+            .de-section-subtitle {
+                font-size: 12px;
+            }
+
+            .de-section-description {
+                font-size: 14px;
+            }
+
+            .de-product-image-wrapper {
+                height: 200px;
+            }
+
+            .de-product-content {
+                padding: 16px;
+            }
+
+            .de-product-title {
+                font-size: 16px;
+                min-height: auto;
+            }
+
+            .de-price-current {
+                font-size: 20px;
+            }
+
+            .de-price-original {
+                font-size: 14px;
+            }
+
+            .de-action-btn {
+                width: 38px;
+                height: 38px;
+            }
+
+            .de-view-all-btn {
+                padding: 14px 32px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .de-products-grid {
+                gap: 16px;
+            }
+
+            .de-product-badge {
+                padding: 4px 10px;
+                font-size: 11px;
+            }
+
+            .de-product-image-wrapper {
+                height: 180px;
+            }
+        }
     </style>
-  </head>
-  <body>
-    <section class="ab-about-wrapper">
-      <div class="ab-container-main">
-        <!-- Header Section -->
-        <div class="ab-header-section"></div>
-
-        <!-- Main Content Grid -->
-        <div class="ab-main-grid">
-          <!-- Left Content -->
-          <div class="ab-content-left">
-            <div class="ab-tag-label">
-              <i class="fas fa-certificate"></i>
-              ABOUT US
-            </div>
-            <h2 class="ab-title-primary">
-              Leading Pakistan's <span>Textile Industry</span> Since 1967
-            </h2>
-            <p class="ab-subtitle-text">
-              Five decades of innovation, craftsmanship, and excellence. From
-              local fabric manufacturing to global textile solutions for premium
-              retailers worldwide.
-            </p>
-            <div class="ab-description-block">
-              <p>
-                At Metro Cotton Mill (Pvt) Ltd., we bring over five decades of
-                innovation, craftsmanship, and excellence to the textile
-                industry. From our humble beginnings in 1967 as a fabric
-                manufacturer, we have grown into one of Pakistan's most trusted
-                and progressive textile groups.
-              </p>
-
-              <p>
-                For more than 30 years, we dominated the local menswear market
-                with state-of-the-art looms, advanced dyeing units, and
-                high-precision finishing facilities. In the last two decades, we
-                expanded our vision to global markets—exporting premium textiles
-                to the USA and Europe.
-              </p>
-
-              <p>
-                Today, we specialize in manufacturing home textiles, scrubs,
-                uniforms, reusable bags, and eco-friendly packaging, proudly
-                supplying leading retailers and wholesalers worldwide.
-              </p>
-            </div>
-            <!-- CTA Section -->
-            <div class="ab-cta-wrapper">
-              <button class="ab-button-primary">
-                READ MORE
-                <i class="fas fa-arrow-right"></i>
-              </button>
-              <div class="ab-decorative-line"></div>
-            </div>
-          </div>
-
-          <!-- Right Gallery -->
-          <div class="ab-gallery-mosaic">
-            <div class="ab-image-box ab-box-1">
-              <img
-                src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1200&q=85"
-                alt="Textile Manufacturing Process"
-              />
-            </div>
-            <div class="ab-image-box ab-box-2">
-              <img
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1200&q=85"
-                alt="Quality Inspection"
-              />
-            </div>
-            <div class="ab-image-box ab-box-3">
-              <img
-                src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=1200&q=85"
-                alt="Textile Production"
-              />
-            </div>
-            <div class="ab-image-box ab-box-4">
-              <img
-                src="https://images.unsplash.com/photo-1612538498613-fa88cdcd3d93?w=1200&q=85"
-                alt="Fabric Weaving"
-              />
-            </div>
-            <div class="ab-image-box ab-box-5">
-              <img
-                src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=1200&q=85"
-                alt="Textile Worker"
-              />
+</head>
+<body>
+    <section class="de-products-section">
+        <div class="de-container">
+            <div class="de-section-header">
+                <div class="de-section-subtitle">
+                    <i class="fas fa-star"></i>
+                    Featured Products
+                    <i class="fas fa-star"></i>
+                </div>
+                <h2 class="de-section-title">Discover Our Premium Collection</h2>
+                <p class="de-section-description">Explore our handpicked selection of high-quality products designed to elevate your lifestyle with exceptional craftsmanship and style.</p>
             </div>
 
-            <div class="ab-badge-experience">
-              <div class="ab-badge-number">58+</div>
-              <div class="ab-badge-text">Years Experience</div>
+            <div class="de-products-grid">
+                <!-- Product 1 -->
+                <div class="de-product-card">
+                    <div class="de-product-image-wrapper">
+                        <span class="de-product-badge">NEW</span>
+                        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600&h=600&fit=crop" alt="Wireless Headphones" class="de-product-image">
+                        <div class="de-product-overlay"></div>
+                        <div class="de-product-actions">
+                            <button class="de-action-btn" title="Quick View">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="de-action-btn" title="Add to Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="de-product-content">
+                        <div class="de-product-category">Electronics</div>
+                        <h3 class="de-product-title">Premium Wireless Headphones</h3>
+                        <div class="de-product-rating">
+                            <div class="de-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="de-rating-count">(128)</span>
+                        </div>
+                        <div class="de-product-footer">
+                            <div class="de-product-price">
+                                <span class="de-price-current">$199</span>
+                                <span class="de-price-original">$299</span>
+                            </div>
+                            <button class="de-cart-btn" title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="de-product-card">
+                    <div class="de-product-image-wrapper">
+                        <span class="de-product-badge">SALE</span>
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&h=600&fit=crop" alt="Smart Watch" class="de-product-image">
+                        <div class="de-product-overlay"></div>
+                        <div class="de-product-actions">
+                            <button class="de-action-btn" title="Quick View">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="de-action-btn" title="Add to Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="de-product-content">
+                        <div class="de-product-category">Wearables</div>
+                        <h3 class="de-product-title">Elite Smart Watch Series X</h3>
+                        <div class="de-product-rating">
+                            <div class="de-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="de-rating-count">(256)</span>
+                        </div>
+                        <div class="de-product-footer">
+                            <div class="de-product-price">
+                                <span class="de-price-current">$349</span>
+                                <span class="de-price-original">$499</span>
+                            </div>
+                            <button class="de-cart-btn" title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="de-product-card">
+                    <div class="de-product-image-wrapper">
+                        <span class="de-product-badge">HOT</span>
+                        <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=600&h=600&fit=crop" alt="Camera Lens" class="de-product-image">
+                        <div class="de-product-overlay"></div>
+                        <div class="de-product-actions">
+                            <button class="de-action-btn" title="Quick View">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="de-action-btn" title="Add to Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="de-product-content">
+                        <div class="de-product-category">Photography</div>
+                        <h3 class="de-product-title">Professional Camera Backpack</h3>
+                        <div class="de-product-rating">
+                            <div class="de-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="de-rating-count">(89)</span>
+                        </div>
+                        <div class="de-product-footer">
+                            <div class="de-product-price">
+                                <span class="de-price-current">$159</span>
+                                <span class="de-price-original">$219</span>
+                            </div>
+                            <button class="de-cart-btn" title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="de-product-card">
+                    <div class="de-product-image-wrapper">
+                        <span class="de-product-badge">TRENDING</span>
+                        <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=600&h=600&fit=crop" alt="Sunglasses" class="de-product-image">
+                        <div class="de-product-overlay"></div>
+                        <div class="de-product-actions">
+                            <button class="de-action-btn" title="Quick View">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="de-action-btn" title="Add to Wishlist">
+                                <i class="fas fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="de-product-content">
+                        <div class="de-product-category">Fashion</div>
+                        <h3 class="de-product-title">Designer Polarized Sunglasses</h3>
+                        <div class="de-product-rating">
+                            <div class="de-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="de-rating-count">(174)</span>
+                        </div>
+                        <div class="de-product-footer">
+                            <div class="de-product-price">
+                                <span class="de-price-current">$129</span>
+                                <span class="de-price-original">$189</span>
+                            </div>
+                            <button class="de-cart-btn" title="Add to Cart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
+
+            <div class="de-view-all-wrapper">
+                <a href="#all-products" class="de-view-all-btn">
+                    View All Products
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
         </div>
-
-        <!-- Services Section -->
-        <div class="ab-services-section">
-          <div class="ab-service-card">
-            <div class="ab-service-header">
-              <div class="ab-icon-wrapper">
-                <i class="fas fa-industry"></i>
-              </div>
-              <div>
-                <h3 class="ab-service-title">Premium Textile Manufacturing</h3>
-              </div>
-            </div>
-            <p class="ab-service-description">
-              Equipped with modern weaving, dyeing, and finishing technologies,
-              we deliver high-quality fabrics trusted by global brands across
-              multiple industries. Our state-of-the-art facilities ensure
-              precision and consistency in every product.
-            </p>
-          </div>
-
-          <div class="ab-service-card">
-            <div class="ab-service-header">
-              <div class="ab-icon-wrapper">
-                <i class="fas fa-clipboard-check"></i>
-              </div>
-              <div>
-                <h3 class="ab-service-title">Customized Product Solutions</h3>
-              </div>
-            </div>
-            <p class="ab-service-description">
-              From home textiles to uniforms, scrubs, and eco-friendly bags, we
-              offer fully customizable production solutions designed to meet the
-              unique needs of international retailers and wholesalers with
-              flexibility and innovation.
-            </p>
-          </div>
-        </div>
-      </div>
     </section>
-  </body>
+</body>
 </html>
