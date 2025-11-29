@@ -7285,3 +7285,9 @@ Custom CSS
     font-size: 14px;
   }
 }
+
+.pq-client-box img {
+  background: #ffffffe6;
+  background-color: #ffffffe6;
+  border-radius: 12px;
+}
